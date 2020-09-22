@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:SutasPersonel/core/components/list_tile_card.dart';
+import 'package:SutasPersonel/core/constants/colors.dart';
+import 'package:SutasPersonel/model/message_servis_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 import 'notifications_view_model.dart';
@@ -25,13 +29,13 @@ class NotificationsScreenView extends NotificationsScreenViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.chevron_left, color: context.colors.primary),
+        leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
         title: Text(
           "BİLDİRİMLER",
-          style: context.textTheme.headline6
-              .copyWith(color: context.colors.primary),
+          style:
+              context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),
-        actions: [Icon(Icons.menu, color: context.colors.primary)],
+        actions: [Icon(Icons.menu, color: AllColors.MAIN_GREEN)],
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
