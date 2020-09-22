@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
+<<<<<<< features/notifications
       home: NotificationsScreen(),
+=======
+      home: Text("data"),
+>>>>>>> development
     );
   }
 }
