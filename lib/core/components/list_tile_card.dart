@@ -1,15 +1,16 @@
+import 'package:SutasPersonel/core/constants/colors.dart';
+import 'package:SutasPersonel/model/message_servis_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 
-class ListTileCard extends StatelessWidget {
-  final String header;
-  final String desc;
-  
 
-  const ListTileCard({
+
+class ListTileCard extends StatelessWidget {
+  Message message;
+
+  ListTileCard({
     Key key,
-    this.header,
-    this.desc,
+    this.message,
   }) : super(key: key);
 
   @override
@@ -31,7 +32,7 @@ class ListTileCard extends StatelessWidget {
                 ),
               ),
               decoration: BoxDecoration(
-                  shape: BoxShape.circle, color: context.colors.primary),
+                  shape: BoxShape.circle, color: AllColors.MAIN_GREEN),
             ),
           ),
           Expanded(
@@ -43,11 +44,11 @@ class ListTileCard extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(bottom: context.lowValue),
                   child: Text(
-                    header,
+                    message.header,
                     style: context.textTheme.bodyText1,
                   ),
                 ),
-                Text(desc, style: context.textTheme.caption)
+                Text(message.desc, style: context.textTheme.caption)
               ],
             ),
           )
