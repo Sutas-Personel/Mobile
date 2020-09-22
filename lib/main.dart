@@ -12,8 +12,13 @@ class MyApp extends StatelessWidget {
           title: Text('Material App Bar'),
         ),
         body: Center(
-          child: Container(
-            child: Text('Hello World'),
+          child: Column(
+            children: [
+              Text("deneme"),
+              Container(
+                child: Text('Hello World'),
+              ),
+            ],
           ),
         ),
       ),
