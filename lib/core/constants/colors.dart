@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AllColors {
   static const Color MAIN_GREEN = Color(0xff006e3a);
