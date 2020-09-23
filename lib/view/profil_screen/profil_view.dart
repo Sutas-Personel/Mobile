@@ -19,7 +19,10 @@ class ProfilScreenView extends ProfilScreenViewModel {
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),
-        actions: [Icon(Icons.menu, color: AllColors.MAIN_GREEN)],
+        actions: [Padding(
+          padding: EdgeInsets.only(right: context.lowValue),
+          child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
+        )],
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
@@ -27,31 +30,34 @@ class ProfilScreenView extends ProfilScreenViewModel {
         child: Column(
           children: [
             Expanded(flex: 2, child: profilHeaderArea(context)),
-            Expanded(flex: 9, child: profileSettingLists())
+            Expanded(flex: 10, child: profileSettingLists())
           ],
         ),
       ),
     );
   }
 
-  Container profilHeaderArea(BuildContext context) {
+  Widget profilHeaderArea(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           image:
               DecorationImage(fit: BoxFit.cover, image: profilHeaderBanner())),
-      child: Row(
-        children: [
-          profilHeaderUserProfilImage(context),
-          Spacer(),
-          profilHeaderUserIdenityArea(context)
-        ],
+      child: Padding(
+        padding: EdgeInsets.only(
+            bottom: context.normalValue, top: context.normalValue),
+        child: Row(
+          children: [
+            profilHeaderUserProfilImage(context),
+            Spacer(),
+            profilHeaderUserIdenityArea(context)
+          ],
+        ),
       ),
     );
   }
 
-  Container profilHeaderUserIdenityArea(BuildContext context) {
+  Widget profilHeaderUserIdenityArea(BuildContext context) {
     return Container(
-      height: context.height * 0.10,
       width: context.width * 0.5,
       decoration: BoxDecoration(
           color: Colors.white70,
@@ -61,6 +67,7 @@ class ProfilScreenView extends ProfilScreenViewModel {
         child: Padding(
           padding: EdgeInsets.all(context.normalValue),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -85,12 +92,12 @@ class ProfilScreenView extends ProfilScreenViewModel {
 
   Text userJob(BuildContext context) {
     return Text("Flutter Developer",
-        style: context.textTheme.bodyText2
+        style: context.textTheme.caption
             .copyWith(color: AllColors.ONBOARDING_GRAY));
   }
 
   Text userName(BuildContext context) {
-    return Text("FatihEmre", style: context.textTheme.headline6);
+    return Text("Fatih Emre Kalem", style: context.textTheme.bodyText1);
   }
 
   Padding profilHeaderUserProfilImage(BuildContext context) {
@@ -162,7 +169,7 @@ class _ProfilListCardState extends State<ProfilListCard> {
             onTap: widget.click == null ? null : widget.click,
             child: ListTile(
               leading: Icon(widget.icon),
-              title: Text(widget.title),
+              title: Text(widget.title,style: context.textTheme.bodyText1,),
               trailing:
                   widget.isSwitch == null ? null : profilCardSwitchButton(),
             ),
