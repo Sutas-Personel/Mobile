@@ -19,7 +19,10 @@ class ProfilScreenView extends ProfilScreenViewModel {
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),
-        actions: [Icon(Icons.menu, color: AllColors.MAIN_GREEN)],
+        actions: [Padding(
+          padding: EdgeInsets.only(right: context.lowValue),
+          child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
+        )],
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
