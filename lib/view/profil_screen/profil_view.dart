@@ -26,94 +26,111 @@ class ProfilScreenView extends ProfilScreenViewModel {
       body: Container(
         child: Column(
           children: [
-            Expanded(
-              flex: 2,
-              child: Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage("assets/images/profilBanner.png"))),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: context.normalValue),
-                      child: CircleAvatar(
-                        backgroundColor: AllColors.ONBOARDING_GRAY,
-                        child: Text(
-                          'FE',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                    Container(
-                      height: context.height * 0.10,
-                      width: context.width * 0.5,
-                      decoration: BoxDecoration(
-                          color: Colors.white70,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              bottomLeft: Radius.circular(15))),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(context.normalValue),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text("FatihEmre",
-                                      style: context.textTheme.headline6),
-                                ),
-                              ),
-                              Container(
-                                child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text("Flutter Developer",
-                                      style: context.textTheme.bodyText2
-                                          .copyWith(
-                                              color:
-                                                  AllColors.ONBOARDING_GRAY)),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-                flex: 9,
-                child: ListView(
-                  children: [
-                    ProfilListCard(
-                        icon: Icons.settings,
-                        title: LocaleKeys.profile_ProfilSettings.locale),
-                    ProfilListCard(
-                        icon: Icons.language,
-                        title: LocaleKeys.profile_Language.locale,
-                        isSwitch: isLanguage),
-                    ProfilListCard(
-                        icon: Icons.brightness_3,
-                        title: LocaleKeys.profile_Theme.locale,
-                        isSwitch: isTheme),
-                    ProfilListCard(
-                      icon: Icons.exit_to_app,
-                      title: LocaleKeys.profile_Exit.locale,
-                      click: () {
-                        print("exit");
-                      },
-                    ),
-                  ],
-                ))
+            Expanded(flex: 2, child: profilHeaderArea(context)),
+            Expanded(flex: 9, child: profileSettingLists())
           ],
         ),
       ),
+    );
+  }
+
+  Container profilHeaderArea(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          image:
+              DecorationImage(fit: BoxFit.cover, image: profilHeaderBanner())),
+      child: Row(
+        children: [
+          profilHeaderUserProfilImage(context),
+          Spacer(),
+          profilHeaderUserIdenityArea(context)
+        ],
+      ),
+    );
+  }
+
+  Container profilHeaderUserIdenityArea(BuildContext context) {
+    return Container(
+      height: context.height * 0.10,
+      width: context.width * 0.5,
+      decoration: BoxDecoration(
+          color: Colors.white70,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15), bottomLeft: Radius.circular(15))),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.all(context.normalValue),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: userName(context),
+                ),
+              ),
+              Container(
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: userJob(context),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Text userJob(BuildContext context) {
+    return Text("Flutter Developer",
+        style: context.textTheme.bodyText2
+            .copyWith(color: AllColors.ONBOARDING_GRAY));
+  }
+
+  Text userName(BuildContext context) {
+    return Text("FatihEmre", style: context.textTheme.headline6);
+  }
+
+  Padding profilHeaderUserProfilImage(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(left: context.normalValue),
+      child: CircleAvatar(
+        backgroundColor: AllColors.ONBOARDING_GRAY,
+        child: Text(
+          'FE',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
+
+  AssetImage profilHeaderBanner() =>
+      AssetImage("assets/images/profilBanner.png");
+
+  ListView profileSettingLists() {
+    return ListView(
+      children: [
+        ProfilListCard(
+            icon: Icons.settings,
+            title: LocaleKeys.profile_ProfilSettings.locale),
+        ProfilListCard(
+            icon: Icons.language,
+            title: LocaleKeys.profile_Language.locale,
+            isSwitch: isLanguage),
+        ProfilListCard(
+            icon: Icons.brightness_3,
+            title: LocaleKeys.profile_Theme.locale,
+            isSwitch: isTheme),
+        ProfilListCard(
+          icon: Icons.exit_to_app,
+          title: LocaleKeys.profile_Exit.locale,
+          click: () {
+            print("exit");
+          },
+        ),
+      ],
     );
   }
 }
@@ -146,20 +163,23 @@ class _ProfilListCardState extends State<ProfilListCard> {
             child: ListTile(
               leading: Icon(widget.icon),
               title: Text(widget.title),
-              trailing: widget.isSwitch == null
-                  ? null
-                  : Switch(
-                      value: widget.isSwitch,
-                      onChanged: (val) {
-                        setState(() {
-                          widget.isSwitch = val;
-                        });
-                      }),
+              trailing:
+                  widget.isSwitch == null ? null : profilCardSwitchButton(),
             ),
           ),
         ),
         Divider(),
       ],
     );
+  }
+
+  Switch profilCardSwitchButton() {
+    return Switch(
+        value: widget.isSwitch,
+        onChanged: (val) {
+          setState(() {
+            widget.isSwitch = val;
+          });
+        });
   }
 }
