@@ -5,6 +5,7 @@ import 'package:SutasPersonel/view/login_screen/login_screen.dart';
 import 'package:SutasPersonel/view/notifications_screen/notifications.dart';
 import 'package:SutasPersonel/view/operations_screen/operations.dart';
 import 'package:SutasPersonel/view/profil_screen/profil.dart';
+import 'package:SutasPersonel/view/register_page/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: OperationsScreen(),
+      home: RegisterPage(),
     );
   }
 }

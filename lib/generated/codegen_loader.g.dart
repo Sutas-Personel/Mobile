@@ -24,11 +24,13 @@ class CodegenLoader extends AssetLoader{
     "Exit": "Çıkış Yap"
   },
   "login": {
+    "Name": "İsim",
     "EmployeeLogin": "Çalışan Girişi",
     "Email": "E-mail",
     "Password": "Şifre",
     "LogIn": "Log In",
     "Or": "ya da",
+    "AreYouRegistered": "Kayıtlı mısın ?",
     "Register": "Kayıt Ol",
     "ForgotPassword": "Şifremi Unuttum"
   }
@@ -43,11 +45,13 @@ static const Map<String,dynamic> en = {
     "Exit": "Exit"
   },
   "login": {
+    "Name": "Name",
     "EmployeeLogin": "Employee Login",
     "Email": "E-mail",
     "Password": "Password",
     "LogIn": "Log In",
     "Or": "Or",
+    "AreYouRegistered": "Are You Registered",
     "Register": "Register",
     "ForgotPassword": "Forgot Password"
   }
