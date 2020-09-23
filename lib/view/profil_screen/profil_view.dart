@@ -15,7 +15,7 @@ class ProfilScreenView extends ProfilScreenViewModel {
       appBar: AppBar(
         leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
         title: Text(
-          LocaleKeys.profile.toUpperCase(),
+          LocaleKeys.profile_Profile.locale.toUpperCase(),
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),
