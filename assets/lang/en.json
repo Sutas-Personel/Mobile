@@ -8,11 +8,13 @@
     "Exit": "Exit"
   },
   "login": {
+    "Name" :"Name",
     "EmployeeLogin": "Employee Login",
     "Email": "E-mail",
     "Password": "Password",
     "LogIn": "Log In",
     "Or": "Or",
+    "AreYouRegistered": "Are You Registered",
     "Register": "Register",
     "ForgotPassword": "Forgot Password"
   }
