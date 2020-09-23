@@ -1,3 +1,10 @@
 {
-    "routeFailed": "Bir sorun oluştu!"
+  "Bir sorunoluştu!": "routeFailed",
+  "profile": {
+    "Profile": "Profil",
+    "ProfilSettings": "Profil Ayarları",
+    "Language": "Dil",
+    "Theme": "Tema",
+    "Exit": "Çıkış Yap"
+  }
 }

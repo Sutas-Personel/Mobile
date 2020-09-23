@@ -1,8 +1,9 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
+import 'package:SutasPersonel/generated/locale_keys.g.dart';
 import 'package:SutasPersonel/view/profil_screen/profil_view_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
-// import '../../core/extension/string_extension.dart';
+import '../../core/extension/string_extension.dart';
 
 class ProfilScreenView extends ProfilScreenViewModel {
   bool isTheme = false;
@@ -14,7 +15,7 @@ class ProfilScreenView extends ProfilScreenViewModel {
       appBar: AppBar(
         leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
         title: Text(
-          "PROFİL",
+          LocaleKeys.profile.toUpperCase(),
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),
@@ -91,18 +92,19 @@ class ProfilScreenView extends ProfilScreenViewModel {
                 child: ListView(
                   children: [
                     ProfilListCard(
-                        icon: Icons.settings, title: "Profil Ayarları"),
+                        icon: Icons.settings,
+                        title: LocaleKeys.profile_ProfilSettings.locale),
                     ProfilListCard(
                         icon: Icons.language,
-                        title: "Dil",
+                        title: LocaleKeys.profile_Language.locale,
                         isSwitch: isLanguage),
                     ProfilListCard(
                         icon: Icons.brightness_3,
-                        title: "Ayarlar",
+                        title: LocaleKeys.profile_Theme.locale,
                         isSwitch: isTheme),
                     ProfilListCard(
                       icon: Icons.exit_to_app,
-                      title: "Çıkış Yap",
+                      title: LocaleKeys.profile_Exit.locale,
                       click: () {
                         print("exit");
                       },
