@@ -56,29 +56,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   Expanded(
                     flex: 85,
-                    child: Container(
-                      child: PageView.builder(
-                          controller: _controller,
-                          onPageChanged: (value) {
-                            setState(() {
-                              currentPage = value;
-                            });
-                          },
-                          itemCount: splashData.length,
-                          itemBuilder: (context, index) => OnboardingSliderCard(
-                              header: splashData[index]["header"],
-                              desc: splashData[index]["desc"])),
-                    ),
+                    child: splashScreenLists(),
                   ),
                   Expanded(
                     flex: 10,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        splashData.length,
-                        (index) => dottedSplashController(index),
-                      ),
-                    ),
+                    child: splashScreenDottedLists(),
                   ),
                   Expanded(
                     flex: 10,
@@ -93,6 +75,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Row splashScreenDottedLists() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(
+        splashData.length,
+        (index) => dottedSplashController(index),
+      ),
+    );
+  }
+
+  Container splashScreenLists() {
+    return Container(
+      child: PageView.builder(
+          controller: _controller,
+          onPageChanged: (value) {
+            setState(() {
+              currentPage = value;
+            });
+          },
+          itemCount: splashData.length,
+          itemBuilder: (context, index) => OnboardingSliderCard(
+              header: splashData[index]["header"],
+              desc: splashData[index]["desc"])),
     );
   }
 
