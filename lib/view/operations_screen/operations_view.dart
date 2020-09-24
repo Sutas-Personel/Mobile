@@ -4,7 +4,7 @@ import '../../core/extension/context_entension.dart';
 import 'operations_view_model.dart';
 
 class OperationsScreenView extends OperationsScreenViewModel {
-  List operations = [
+  List<Map<String,dynamic>> operations = [
     {
       "icon": null,
       "title": "İzin İşlemleri",
