@@ -1,10 +1,9 @@
-import 'package:SutasPersonel/view/onboarding_screen/onboarding_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'core/constants/app_constants.dart';
 import 'core/init/lang/language_manager.dart';
-import 'view/operations_screen/operations.dart';
+import 'view/onboarding_screen/onboarding_view.dart';
 
 void main() => runApp(EasyLocalization(
     path: ApplicationConstants.LANGUAGE_ASSET_PATH,

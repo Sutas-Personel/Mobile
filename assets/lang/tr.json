@@ -1,10 +1,23 @@
 {
-  "Bir sorunoluştu!": "routeFailed",
+  "routeFailed": "Bir Sorun Oluştu",
   "profile": {
     "Profile": "Profil",
     "ProfilSettings": "Profil Ayarları",
     "Language": "Dil",
     "Theme": "Tema",
     "Exit": "Çıkış Yap"
+  },
+  "login": {
+    "Name" :"İsim",
+    "EmployeeLogin": "Çalışan Girişi",
+    "Email": "E-mail",
+    "Password": "Şifre",
+    "LogIn": "Log In",
+    "Or": "ya da",
+    "AreYouRegistered": "Kayıtlı mısın ?",
+    "Register": "Kayıt Ol",
+    "ForgotPassword": "Şifremi Unuttum",
+    "ForgotPassword": "Şifremi Unuttum"
+
   }
 }

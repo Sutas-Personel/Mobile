@@ -14,7 +14,28 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> en = {
+  static const Map<String,dynamic> tr = {
+  "routeFailed": "Bir Sorun Oluştu",
+  "profile": {
+    "Profile": "Profil",
+    "ProfilSettings": "Profil Ayarları",
+    "Language": "Dil",
+    "Theme": "Tema",
+    "Exit": "Çıkış Yap"
+  },
+  "login": {
+    "Name": "İsim",
+    "EmployeeLogin": "Çalışan Girişi",
+    "Email": "E-mail",
+    "Password": "Şifre",
+    "LogIn": "Log In",
+    "Or": "ya da",
+    "AreYouRegistered": "Kayıtlı mısın ?",
+    "Register": "Kayıt Ol",
+    "ForgotPassword": "Şifremi Unuttum"
+  }
+};
+static const Map<String,dynamic> en = {
   "routeFailed": "Bir sorun oluştu",
   "profile": {
     "Profile": "Profil",
@@ -22,17 +43,18 @@ class CodegenLoader extends AssetLoader{
     "Language": "Language",
     "Theme": "Theme",
     "Exit": "Exit"
+  },
+  "login": {
+    "Name": "Name",
+    "EmployeeLogin": "Employee Login",
+    "Email": "E-mail",
+    "Password": "Password",
+    "LogIn": "Log In",
+    "Or": "Or",
+    "AreYouRegistered": "Are You Registered",
+    "Register": "Register",
+    "ForgotPassword": "Forgot Password"
   }
 };
-static const Map<String,dynamic> tr = {
-  "Bir sorunoluştu!": "routeFailed",
-  "profile": {
-    "Profile": "Profil",
-    "ProfilSettings": "Profil Ayarları",
-    "Language": "Dil",
-    "Theme": "Tema",
-    "Exit": "Çıkış Yap"
-  }
-};
-static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
+static const Map<String, Map<String,dynamic>> mapLocales = {"tr": tr, "en": en};
 }
