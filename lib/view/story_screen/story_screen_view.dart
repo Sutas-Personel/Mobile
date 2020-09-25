@@ -3,12 +3,11 @@ import 'package:SutasPersonel/model/story_servis_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-
+import '../../core/extension/context_entension.dart';
 import 'story_screen_view_model.dart';
 
 class StoryScreenView extends StoryScreenViewModel
     with SingleTickerProviderStateMixin {
-  // List<Story> stories;
   PageController _pageController;
   AnimationController _animationController;
   VideoPlayerController _videoController;
@@ -22,7 +21,24 @@ class StoryScreenView extends StoryScreenViewModel
     _pageController = PageController();
     _animationController = AnimationController(vsync: this);
     final Story firstStory = stories.first;
-    _loadStory(story:firstStory,animateToPage: false);
+    _loadStory(story: firstStory, animateToPage: false);
+
+    _animationController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        // _animationController..stop()..reset();//????????????????????????????????
+        _animationController.stop();
+        _animationController.reset();
+        setState(() {
+          if (_currentIndex + 1 < stories.length) {
+            _currentIndex += 1;
+            _loadStory(story: stories[_currentIndex]);
+          } else {
+            _currentIndex = 0;
+            _loadStory(story: stories[_currentIndex]);
+          }
+        });
+      }
+    });
   }
 
   @override
@@ -32,52 +48,72 @@ class StoryScreenView extends StoryScreenViewModel
     _animationController.dispose();
     _videoController?.dispose();
     super.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final Story story = stories[_currentIndex];
+
     return Scaffold(
       body: GestureDetector(
+        onTapDown: (details) => _onTapDown(details, story),
+        onTap: () => _onTap(story),
         child: Stack(
           children: [
             PageView.builder(
-                physics:
-                    NeverScrollableScrollPhysics(), //????????????????????????????????
-                controller: _pageController,
-                itemCount: stories.length,
-                itemBuilder: (context, index) {
-                  final Story story = stories[index];
+              physics:
+                  NeverScrollableScrollPhysics(), //????????????????????????????????
+              controller: _pageController,
+              itemCount: stories.length,
+              itemBuilder: (context, index) {
+                final Story story = stories[index];
+                print(index);
+                // print(story.media);
+                // print(story.duration);
+                // print(story.url);
+                switch (story.media) {
+                  case MediaType.image:
+                    print("resim");
+                    return CachedNetworkImage(
+                      imageUrl: story.url,
+                      fit: BoxFit.cover,
+                    );
+                  // break;
+                  case MediaType.video:
+                    print("video");
 
-                  switch (story.media) {
-                    case MediaType.image:
-                      print("resim");
-                      return CachedNetworkImage(
-                        imageUrl: story.url,
-                        fit: BoxFit.cover,
-                      );
-                      break;
-                    case MediaType.video:
-                      print("video");
-
-                      if (_videoController != null &&
-                          _videoController.value.initialized) {
-                        return FittedBox(
-                            fit: BoxFit.cover,
-                            child: SizedBox(
-                                width: _videoController.value.size.width,
-                                height: _videoController.value.size.height,
-                                child: VideoPlayer(_videoController)));
-                      }
-                      break;
-                  }
-                  return const SizedBox
-                      .shrink(); //????????????????????????????????
-                })
+                    if (_videoController != null &&
+                        _videoController.value.initialized) {
+                      return FittedBox(
+                          fit: BoxFit.cover,
+                          child: SizedBox(
+                              width: _videoController.value.size.width,
+                              height: _videoController.value.size.height,
+                              child: VideoPlayer(_videoController)));
+                    }
+                  // break;
+                }
+                return const SizedBox
+                    .shrink(); //????????????????????????????????
+              },
+            )
           ],
         ),
       ),
     );
+  }
+
+  void _onTap(Story story) {
+    if (story.media == MediaType.video) {
+      if (_videoController.value.isPlaying) {
+        // videoları dokunarak durdurma olmalı ????????
+        _videoController.pause();
+        _animationController.stop();
+      } else {
+        _videoController.play();
+        _animationController.forward();
+      }
+    }
   }
 
   void _loadStory({Story story, bool animateToPage = true}) {
@@ -112,6 +148,46 @@ class StoryScreenView extends StoryScreenViewModel
         duration: const Duration(milliseconds: 1),
         curve: Curves.easeInOut,
       );
+    }
+  }
+
+  _onTapDown(TapDownDetails details, Story story) {
+    final double screenWidth = context.width;
+    final double dx = details.globalPosition
+        .dx; // ekranındaki dokunmaların glabal konumunu alıyoruz.
+
+    if (dx < screenWidth / 3) {
+      //ekranın 3/1 oranın sol kısmın dokunmaları yakalıyor.
+
+      setState(() {
+        if (_currentIndex - 1 >= 0) {
+          _currentIndex--;
+          _loadStory(story: stories[_currentIndex]);
+        }
+      });
+    } else if (dx > 2 * screenWidth / 3) {
+      //ekranın 3/1 oranın sağ kısmın dokunmaları yakalıyor.
+
+      setState(() {
+        if (_currentIndex + 1 < stories.length) {
+          _currentIndex++;
+          _loadStory(story: stories[_currentIndex]);
+        } else {
+          _currentIndex = 0;
+          _loadStory(story: stories[_currentIndex]);
+        }
+      });
+    } else {
+      if (story.media == MediaType.video) {
+        if (_videoController.value.isPlaying) {
+          // videoları dokunarak durdurma olmalı ????????
+          _videoController.pause();
+          _animationController.stop();
+        } else {
+          _videoController.play();
+          _animationController.forward();
+        }
+      }
     }
   }
 }
