@@ -80,19 +80,19 @@ class RegisterPageView extends RegisterPageViewModel {
                         Container(
                           color: AllColors.INPUT_WHITE,
                           height: 2,
-                          width: context.width * 0.36,
+                          width: context.width * 0.25,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
-                            LocaleKeys.login_Or.locale,
+                            LocaleKeys.login_AreYouRegistered.locale,
                             style: TextStyle(color: AllColors.INPUT_WHITE),
                           ),
                         ),
                         Container(
                           color: AllColors.INPUT_WHITE,
                           height: 2,
-                          width: context.width * 0.36,
+                          width: context.width * 0.25,
                         ),
                       ],
                     ),

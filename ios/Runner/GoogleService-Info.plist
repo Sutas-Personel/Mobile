@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:171733598695:ios:73e2db0dbab24f0f637d42</string>
+	<string>1:171733598695:ios:57b806ec313ba5e2637d42</string>
 	<key>DATABASE_URL</key>
 	<string>https://sutas-personel.firebaseio.com</string>
 </dict>
