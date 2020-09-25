@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
-import 'package:SutasPersonel/core/extension/context_entension.dart';
-
-import '../constants/colors.dart';
 import '../constants/font_size_const.dart';
+import '../extension/context_entension.dart';
 
 class ButtonWidget extends StatelessWidget {
   String buttonTitle;

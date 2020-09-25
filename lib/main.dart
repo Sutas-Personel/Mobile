@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'core/constants/app_constants.dart';
 import 'core/init/lang/language_manager.dart';
-import 'view/onboarding_screen/onboarding_view.dart';
+import 'view/story_screen/story_screen.dart';
 
 void main() => runApp(EasyLocalization(
     path: ApplicationConstants.LANGUAGE_ASSET_PATH,
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: OnboardingScreen(),
+      home: StoryScreen(),
     );
   }
 }
