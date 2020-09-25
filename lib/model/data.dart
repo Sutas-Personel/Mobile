@@ -2,8 +2,8 @@ import 'story_servis_model.dart';
 import 'user_service_model.dart';
 
 final User user = User(
-  name: 'John Doe',
-  profileImageUrl: 'https://wallpapercave.com/wp/AYWg3iu.jpg',
+  name: 'Sütaş',
+  profileImageUrl: 'https://www.sutas.com.tr/uploads/setting/seo/6281b9c4a8e57cb110cdda5bdc06ffbc.png',
 );
 List<Story> stories = [
   Story(

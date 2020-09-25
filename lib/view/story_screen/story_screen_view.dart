@@ -298,7 +298,7 @@ class UserInfo extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 20,
-          backgroundColor: AllColors.ONBOARDING_GRAY,
+          backgroundColor: Colors.transparent,
           backgroundImage: CachedNetworkImageProvider(
             //????????????????????????????????
             user.profileImageUrl,
@@ -311,7 +311,7 @@ class UserInfo extends StatelessWidget {
             child: Text(
           user.name,
           style: context.textTheme.subtitle1.copyWith(
-              color: AllColors.BUTTON_WHITE,
+              color: AllColors.MAIN_GREEN,
               fontWeight: FontWeight.bold,
               fontSize: 16),
         )),
