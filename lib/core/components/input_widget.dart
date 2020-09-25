@@ -1,7 +1,9 @@
+import 'package:SutasPersonel/core/constants/font_size_const.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import '../constants/colors.dart';
+import '../../core/extension/context_entension.dart';
 
 class InputWidget extends StatelessWidget {
   String title;
@@ -30,6 +32,7 @@ class InputWidget extends StatelessWidget {
           focusColor: null,
           labelText: title,
           labelStyle: TextStyle(
+            fontSize: FontSizeConst.EIGHTEEN_PIXEL,
             color: AllColors.INPUT_WHITE,
           )),
     );
