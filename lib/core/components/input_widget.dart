@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
-import '../constants/colors.dart';
 
 class InputWidget extends StatelessWidget {
   String title;
