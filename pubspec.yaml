@@ -32,6 +32,7 @@ dependencies:
   firebase_auth: ^0.18.0+1
   cached_network_image: ^2.3.2+1
   video_player: ^0.10.12+4
+  auto_size_text: ^2.1.0
 
 dev_dependencies:
   flutter_test:
