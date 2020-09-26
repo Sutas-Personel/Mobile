@@ -1,9 +1,14 @@
 import 'package:SutasPersonel/core/constants/app_constants.dart';
 import 'package:SutasPersonel/core/init/lang/language_manager.dart';
-import 'package:SutasPersonel/view/content_detail/content_detail.dart';
-import 'package:SutasPersonel/view/forgot_password/forgot_password.dart';
-import 'package:SutasPersonel/view/login_screen/login_screen.dart';
 
+import 'package:SutasPersonel/view/forgot_password/forgot_password.dart';
+import 'package:SutasPersonel/view/home_screen/home_screen.dart';
+import 'package:SutasPersonel/view/login_screen/login_screen.dart';
+import 'package:SutasPersonel/view/onboarding_screen/onboarding_view.dart';
+import 'package:SutasPersonel/view/profil_screen/profil.dart';
+import 'package:SutasPersonel/view/register_page/register_page.dart';
+import 'package:SutasPersonel/view/splash_screen/splash_screen.dart';
+import 'package:SutasPersonel/view/story_screen/story_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

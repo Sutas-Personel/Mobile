@@ -41,10 +41,10 @@ class LoginScreenView extends LoginScreenViewModel {
             Expanded(flex: 3, child: sutasLogo()),
             Expanded(flex: 1, child: sutasEmployeeText()),
             SizedBox(
-              height: context.height * 0.08,
+              height: context.height * 0.04,
             ),
             Expanded(
-                flex: 8,
+                flex: 12,
                 child: loginInputArea(
                     emailController, context, passwordController)),
             Spacer(
