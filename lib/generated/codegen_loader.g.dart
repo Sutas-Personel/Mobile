@@ -32,7 +32,8 @@ class CodegenLoader extends AssetLoader{
     "Or": "ya da",
     "AreYouRegistered": "Kayıtlı mısın ?",
     "Register": "Kayıt Ol",
-    "ForgotPassword": "Şifremi Unuttum"
+    "ForgotPassword": "Şifremi Unuttum",
+    "SendPasswordReset": "Send Password Reset Link"
   }
 };
 static const Map<String,dynamic> en = {
@@ -53,7 +54,8 @@ static const Map<String,dynamic> en = {
     "Or": "Or",
     "AreYouRegistered": "Are You Registered",
     "Register": "Register",
-    "ForgotPassword": "Forgot Password"
+    "ForgotPassword": "Forgot Password",
+    "SendPasswordReset": "Send Password Reset Link"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"tr": tr, "en": en};

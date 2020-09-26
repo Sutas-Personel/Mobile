@@ -17,6 +17,7 @@ abstract class  LocaleKeys {
   static const login_AreYouRegistered = 'login.AreYouRegistered';
   static const login_Register = 'login.Register';
   static const login_ForgotPassword = 'login.ForgotPassword';
+  static const login_SendPasswordReset = 'login.SendPasswordReset';
   static const login = 'login';
 
 }
