@@ -1,6 +1,7 @@
 import 'package:SutasPersonel/core/constants/app_constants.dart';
 import 'package:SutasPersonel/core/init/lang/language_manager.dart';
 import 'package:SutasPersonel/view/content_detail/content_detail.dart';
+import 'package:SutasPersonel/view/forgot_password/forgot_password.dart';
 import 'package:SutasPersonel/view/login_screen/login_screen.dart';
 
 import 'package:SutasPersonel/view/notifications_screen/notifications.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: OperationsScreen(),
+      home: ForgotPassword(),
     );
   }
 }
