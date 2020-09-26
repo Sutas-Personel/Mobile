@@ -42,7 +42,7 @@ class RegisterPageView extends RegisterPageViewModel {
               flex: 1,
               child: emptySizeBox(context),
             ),
-            Expanded(flex: 11, child: textFormInputs(context)),
+            Expanded(flex: 12, child: textFormInputs(context)),
             Spacer(
               flex: 1,
             )
@@ -68,16 +68,16 @@ class RegisterPageView extends RegisterPageViewModel {
             InputWidget(nameTextController, LocaleKeys.login_Name.locale,
                 nameFunc, false),
             SizedBox(
-              height: context.height * 0.03,
+              height: context.height * 0.02,
             ),
             InputWidget(emailTextController, LocaleKeys.login_Email.locale,
                 emailFunc, false),
             SizedBox(
-              height: context.height * 0.03,
+              height: context.height * 0.02,
             ),
             InputWidget(passwordTextContoller, LocaleKeys.login_Password.locale,
                 passFunc, true),
-            SizedBox(height: context.height * 0.08),
+            SizedBox(height: context.height * 0.03),
             ButtonWidget(LocaleKeys.login_Register.locale,
                 () => registerOnpress(context)),
             SizedBox(

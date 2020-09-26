@@ -50,8 +50,11 @@ class ForgotPasswordView extends ForgotPasswordViewModel {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          InputWidget(forgotPassController, LocaleKeys.login_Email.locale,
-              emailValid, false),
+          Form(
+            key: formKey,
+            child: InputWidget(forgotPassController,
+                LocaleKeys.login_Email.locale, emailValid, false),
+          ),
           SizedBox(
             height: context.height * 0.06,
           ),

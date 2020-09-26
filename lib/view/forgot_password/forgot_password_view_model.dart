@@ -4,7 +4,7 @@ import './forgot_password.dart';
 
 abstract class ForgotPasswordViewModel extends State<ForgotPassword> {
   // Add your state and logic here
-
+  var formKey = GlobalKey<FormState>();
   var forgotPassController = TextEditingController();
 
   String emailValid(String string) {
@@ -20,7 +20,9 @@ abstract class ForgotPasswordViewModel extends State<ForgotPassword> {
   }
 
   sendPasswordReset(BuildContext context) {
-    SignInHelper.instance().forgotPass(forgotPassController.text);
+    if (formKey.currentState.validate()) {
+      SignInHelper.instance().forgotPass(forgotPassController.text);
+    }
   }
 
   @override
