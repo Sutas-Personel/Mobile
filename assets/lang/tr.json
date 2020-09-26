@@ -23,5 +23,8 @@
   "cardDetail":{
     "name":"İçerik Detay",
     "socialMediaShareText":"İçeriği sosyal medyada paylaş"
+  },
+  "home":{
+    "name":"Zaman Akışı"
   }
 }

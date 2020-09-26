@@ -38,6 +38,9 @@ class CodegenLoader extends AssetLoader{
   "cardDetail": {
     "name": "Content Detail",
     "socialMediaShareText": "Share content on social media"
+  },
+  "home": {
+    "name": "Time Line"
   }
 };
 static const Map<String,dynamic> tr = {
@@ -64,6 +67,9 @@ static const Map<String,dynamic> tr = {
   "cardDetail": {
     "name": "İçerik Detay",
     "socialMediaShareText": "İçeriği sosyal medyada paylaş"
+  },
+  "home": {
+    "name": "Zaman Akışı"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};

@@ -1,7 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import 'user_service_model.dart';
-
 User user = User(
   name: 'Sütaş',
   profileImageUrl:
@@ -35,5 +33,15 @@ class Story {
     @required this.media,
     @required this.duration,
     @required this.user,
+  });
+}
+
+class User {
+  final String name;
+  final String profileImageUrl;
+
+  const User({
+    @required this.name,
+    @required this.profileImageUrl,
   });
 }

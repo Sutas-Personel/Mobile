@@ -1,7 +1,5 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
-import 'package:SutasPersonel/model/data.dart';
 import 'package:SutasPersonel/model/story_servis_model.dart';
-import 'package:SutasPersonel/model/user_service_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -24,7 +22,7 @@ class StoryScreenView extends StoryScreenViewModel
     final Story firstStory = stories.first;
     _loadStory(story: firstStory, animateToPage: false);
 
-     _animationController.addStatusListener((status) {
+    _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         // _animationController..stop()..reset();//????????????????????????????????
         _animationController.stop();

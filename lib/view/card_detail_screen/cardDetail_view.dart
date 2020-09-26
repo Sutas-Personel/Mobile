@@ -15,7 +15,11 @@ class CardDetailView extends CardDetailViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN)),
         title: Text(
           LocaleKeys.cardDetail_name.locale.toUpperCase(),
           style:

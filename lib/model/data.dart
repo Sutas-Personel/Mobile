@@ -1,4 +1,4 @@
-import 'story_servis_model.dart';
+/* import 'story_servis_model.dart';
 import 'user_service_model.dart';
 
 final User user = User(
@@ -50,3 +50,4 @@ List<Story> stories = [
     user: user,
   ),
 ];
+ */

@@ -1,4 +1,5 @@
 import 'package:SutasPersonel/model/story_servis_model.dart';
+import 'package:SutasPersonel/view/story_screen/story_screen.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 import 'story_card.dart';
@@ -23,7 +24,10 @@ class _StoryCardListsState extends State<StoryCardLists> {
         itemCount: widget.stories.length,
         itemBuilder: (context, index) => GestureDetector(
             onTap: () {
-              print(widget.stories);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => StoryScreen()),
+              );
             },
             child:
                 StoryCard(imgUrl: widget.stories[index].user.profileImageUrl)),

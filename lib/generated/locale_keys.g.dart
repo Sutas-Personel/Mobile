@@ -22,5 +22,7 @@ abstract class  LocaleKeys {
   static const cardDetail_name = 'cardDetail.name';
   static const cardDetail_socialMediaShareText = 'cardDetail.socialMediaShareText';
   static const cardDetail = 'cardDetail';
+  static const home_name = 'home.name';
+  static const home = 'home';
 
 }
