@@ -58,6 +58,7 @@ class StoryCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(context.lowValue),
           child: CircleAvatar(
+            
             radius: context.width * 0.08,
             backgroundColor: AllColors.MAIN_GREEN,
             child: CircleAvatar(
