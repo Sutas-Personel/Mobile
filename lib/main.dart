@@ -1,5 +1,6 @@
 import 'package:SutasPersonel/core/constants/app_constants.dart';
 import 'package:SutasPersonel/core/init/lang/language_manager.dart';
+import 'package:SutasPersonel/core/init/routes/router.dart';
 import 'package:SutasPersonel/view/bottom_navigation/bottom_navigation.dart';
 import 'package:SutasPersonel/view/forgot_password/forgot_password.dart';
 import 'package:SutasPersonel/view/home_screen/home_screen.dart';
@@ -34,8 +35,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: BottomNavigation(),
+      home: Routes(),
     );
   }
 }
