@@ -41,6 +41,9 @@ class CodegenLoader extends AssetLoader{
   },
   "home": {
     "name": "Time Line"
+  },
+  "notifications": {
+    "name": "Bildirimler"
   }
 };
 static const Map<String,dynamic> tr = {
@@ -70,6 +73,9 @@ static const Map<String,dynamic> tr = {
   },
   "home": {
     "name": "Zaman Akışı"
+  },
+  "notifications": {
+    "name": "Bildirimler"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};

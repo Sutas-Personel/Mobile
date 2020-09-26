@@ -26,5 +26,8 @@
   },
   "home":{
     "name":"Zaman Akışı"
+  },
+  "notifications":{
+    "name":"Bildirimler"
   }
 }

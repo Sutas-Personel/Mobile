@@ -24,5 +24,7 @@ abstract class  LocaleKeys {
   static const cardDetail = 'cardDetail';
   static const home_name = 'home.name';
   static const home = 'home';
+  static const notifications_name = 'notifications.name';
+  static const notifications = 'notifications';
 
 }

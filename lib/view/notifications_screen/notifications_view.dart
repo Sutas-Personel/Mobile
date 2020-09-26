@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:SutasPersonel/core/components/list_tile_card.dart';
 import 'package:SutasPersonel/core/constants/colors.dart';
+import 'package:SutasPersonel/generated/locale_keys.g.dart';
 import 'package:SutasPersonel/model/message_servis_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 import 'notifications_view_model.dart';
+import '../../core/extension/string_extension.dart';
 
 List<Message> message = [
   Message(header: "Zachery", desc: "P.O. Box 260, 9464 Risus. Av."),
@@ -31,7 +33,7 @@ class NotificationsScreenView extends NotificationsScreenViewModel {
       appBar: AppBar(
         leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
         title: Text(
-          "BİLDİRİMLER",
+          LocaleKeys.notifications_name.locale.toUpperCase(),
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),

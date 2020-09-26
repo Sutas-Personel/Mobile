@@ -23,7 +23,10 @@
     "name": "Content Detail",
     "socialMediaShareText": "Share content on social media"
   },
-  "home":{
-    "name":"Time Line"
+  "home": {
+    "name": "Time Line"
+  },
+  "notifications": {
+    "name": "Bildirimler"
   }
 }
