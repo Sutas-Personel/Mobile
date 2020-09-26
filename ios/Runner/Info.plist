@@ -26,7 +26,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+<<<<<<< HEAD
+
+	<key>CFBundleURLTypes</key>
+=======
 <key>CFBundleURLTypes</key>
+>>>>>>> 5a92d17f8f493f6fb464a2b7176689d2c4a7dd29
 <array>
 	<dict>
 		<key>CFBundleTypeRole</key>
@@ -39,8 +44,11 @@
 		</array>
 	</dict>
 </array>
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 5a92d17f8f493f6fb464a2b7176689d2c4a7dd29
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
