@@ -19,6 +19,11 @@ abstract class ForgotPasswordViewModel extends State<ForgotPassword> {
     }
   }
 
+  void navigateLogin() {
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
+  }
+
   sendPasswordReset(BuildContext context) {
     if (formKey.currentState.validate()) {
       SignInHelper.instance().forgotPass(forgotPassController.text);

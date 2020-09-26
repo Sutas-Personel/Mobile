@@ -31,18 +31,23 @@ abstract class LoginScreenViewModel extends State<LoginScreen> {
   }
 
   void forgotOnpres() {
-    print("forgot pass"); // will add forgotOnPress route
+    Navigator.of(context).pushNamedAndRemoveUntil('/forgot_password',
+        (Route<dynamic> route) => false); // will add forgotOnPress route
   }
 
   loginOnpress(BuildContext context) async {
     formkey.currentState.validate();
     var resultUser = await SignInHelper.instance()
         .signIn(emailController.text, passwordController.text);
+    print(resultUser.emailVerified);
     if (resultUser.emailVerified) {
       print("email onaylı kullanıcı giriş yapıyor");
       print("uid ${resultUser.uid}");
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          '/bottom_navigation', (Route<dynamic> route) => false);
       // Navigator;
     } else {
+      print("denemee");
       scaffoldKey.currentState.showSnackBar(SnackBar(
           content: Text(
               "E-mail adresinize aktivasyon maili gönderdik lüfen onaylayın")));
@@ -52,6 +57,8 @@ abstract class LoginScreenViewModel extends State<LoginScreen> {
   }
 
   onPressRegister() {
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil('/register', (Route<dynamic> route) => false);
     //// will add forgotOnPress route
   }
 

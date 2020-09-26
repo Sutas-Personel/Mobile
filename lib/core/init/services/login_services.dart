@@ -16,14 +16,11 @@ class SignInHelper {
   final FirebaseAuth auth = FirebaseAuth.instance;
 
   Future<User> signIn(String email, String password) async {
-    auth
-        .signInWithEmailAndPassword(email: email, password: password)
-        .then((signUser) {
-      var signInUser = signUser.user;
-      return signInUser;
-    }).catchError((signInError) {
-      print("E-mail ya da şifre hatalı");
-    });
+    var signInUser = (await auth.signInWithEmailAndPassword(
+            email: email, password: password))
+        .user;
+
+    return signInUser;
   }
 
   Future<User> register(String emaill, String passwordd) async {

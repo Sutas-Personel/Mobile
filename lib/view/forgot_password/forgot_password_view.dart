@@ -5,6 +5,7 @@ import 'package:SutasPersonel/core/constants/file_path.dart';
 import 'package:SutasPersonel/core/constants/font_size_const.dart';
 import 'package:SutasPersonel/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
+import '../../model/time_flow_card_service_model.dart';
 import './forgot_password_view_model.dart';
 import '../../core/extension/context_entension.dart';
 import '../../core/extension/string_extension.dart';
@@ -59,7 +60,11 @@ class ForgotPasswordView extends ForgotPasswordViewModel {
             height: context.height * 0.06,
           ),
           ButtonWidget(LocaleKeys.login_SendPasswordReset.locale,
-              () => sendPasswordReset(context))
+              () => sendPasswordReset(context)),
+          SizedBox(
+            height: context.height * 0.02,
+          ),
+          ButtonWidget(LocaleKeys.login_LogIn.locale, navigateLogin),
         ],
       ),
     );

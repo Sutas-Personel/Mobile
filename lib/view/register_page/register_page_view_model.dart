@@ -37,7 +37,10 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
     }
   }
 
-  onPressLogIn() {}
+  onPressLogIn() {
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
+  }
 
   registerOnpress(BuildContext context) async {
     formkey.currentState.validate();
@@ -56,7 +59,6 @@ abstract class RegisterPageViewModel extends State<RegisterPage> {
             content: Text(
                 "Email aktivasyon gönderilirken hata çıktı \n Hata kodu : $verificationError")));
       });
-      print(firebaseUser.toString());
     } else {
       scaffoldKey.currentState
           .showSnackBar(SnackBar(content: Text("Bu hesap kullanımda")));
