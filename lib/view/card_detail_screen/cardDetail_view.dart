@@ -1,12 +1,14 @@
+import 'package:SutasPersonel/core/components/story_card_lists.dart';
 import 'package:SutasPersonel/generated/locale_keys.g.dart';
+import 'package:SutasPersonel/model/story_servis_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/components/time_flow_card.dart';
 import '../../core/constants/colors.dart';
 import '../../core/extension/context_entension.dart';
+import '../../core/extension/string_extension.dart';
 import '../../model/time_flow_card_service_model.dart';
 import 'cardDetail_view_model.dart';
-import '../../core/extension/string_extension.dart';
 
 class CardDetailView extends CardDetailViewModel {
   @override
@@ -46,39 +48,9 @@ class CardDetailView extends CardDetailViewModel {
 
   SafeArea storyListArea(BuildContext context) {
     return SafeArea(
-      child: Container(
-        height: context.height * 0.15,
-        child: ListView.builder(
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          itemBuilder: (context, index) => StoryCard(),
-        ),
+      child: StoryCardLists(
+        stories: storyList,
       ),
     );
-  }
-}
-
-class StoryCard extends StatelessWidget {
-  const StoryCard({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        width: context.width * 0.20,
-        child: Padding(
-          padding: EdgeInsets.all(context.lowValue),
-          child: CircleAvatar(
-            radius: context.width * 0.08,
-            backgroundColor: AllColors.MAIN_GREEN,
-            child: CircleAvatar(
-              radius: context.width * 0.075,
-              backgroundImage: NetworkImage(
-                  "https://s3.amazonaws.com/uifaces/faces/twitter/beshur/128.jpg"),
-            ),
-          ),
-        ));
   }
 }

@@ -12,6 +12,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'core/constants/app_constants.dart';
 import 'core/init/lang/language_manager.dart';
 import 'view/card_detail_screen/cardDetail.dart';
+import 'view/home_screen/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: CardDetail(),
+      home: HomeScreen(),
     );
   }
 }
