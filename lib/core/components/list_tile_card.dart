@@ -3,8 +3,6 @@ import 'package:SutasPersonel/model/message_servis_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 
-
-
 class ListTileCard extends StatelessWidget {
   Message message;
 

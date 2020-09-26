@@ -16,6 +16,7 @@
     "Or": "Or",
     "AreYouRegistered": "Are You Registered",
     "Register": "Register",
-    "ForgotPassword": "Forgot Password"
+    "ForgotPassword": "Forgot Password",
+    "SendPasswordReset": "Send Password Reset Link"
   }
 }
