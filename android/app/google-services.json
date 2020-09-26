@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "171733598695",
+    "firebase_url": "https://sutas-personel.firebaseio.com",
+    "project_id": "sutas-personel",
+    "storage_bucket": "sutas-personel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171733598695:android:76c6073612286a5e637d42",
+        "android_client_info": {
+          "package_name": "com.example.SutasPersonel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171733598695-725q5hf764oo4nrm3sgs5ua2ksdp7r5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.SutasPersonel",
+            "certificate_hash": "893ce8c45cb18003a30aa4ab4c6f8d57241f11f6"
+          }
+        },
+        {
+          "client_id": "171733598695-3bq67rijjf95033qevv5smfqmh353195.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7-lT08dxa6svlYF1f3uvE2P5jzG3YWr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171733598695-3bq67rijjf95033qevv5smfqmh353195.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "171733598695-dtcho3db25eslpgaco83s249dae7t1rn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.SutasPersonel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
