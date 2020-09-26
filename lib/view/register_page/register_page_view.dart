@@ -5,10 +5,9 @@ import '../../core/constants/colors.dart';
 import '../../core/constants/file_path.dart';
 import '../../core/constants/font_size_const.dart';
 import '../../generated/locale_keys.g.dart';
-import '../../generated/locale_keys.g.dart';
 import './register_page_view_model.dart';
 import '../../core/extension/context_entension.dart';
-import 'package:SutasPersonel/core/extension/string_extension.dart';
+import '../../core/extension/string_extension.dart';
 
 class RegisterPageView extends RegisterPageViewModel {
   var scaffoldKey = GlobalKey<ScaffoldState>();
