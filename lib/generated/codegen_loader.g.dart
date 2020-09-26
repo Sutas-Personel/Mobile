@@ -14,29 +14,7 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> tr = {
-  "routeFailed": "Bir Sorun Oluştu",
-  "profile": {
-    "Profile": "Profil",
-    "ProfilSettings": "Profil Ayarları",
-    "Language": "Dil",
-    "Theme": "Tema",
-    "Exit": "Çıkış Yap"
-  },
-  "login": {
-    "Name": "İsim",
-    "EmployeeLogin": "Çalışan Girişi",
-    "Email": "E-mail",
-    "Password": "Şifre",
-    "LogIn": "Log In",
-    "Or": "ya da",
-    "AreYouRegistered": "Kayıtlı mısın ?",
-    "Register": "Kayıt Ol",
-    "ForgotPassword": "Şifremi Unuttum",
-    "SendPasswordReset": "Send Password Reset Link"
-  }
-};
-static const Map<String,dynamic> en = {
+  static const Map<String,dynamic> en = {
   "routeFailed": "Bir sorun oluştu",
   "profile": {
     "Profile": "Profil",
@@ -56,7 +34,37 @@ static const Map<String,dynamic> en = {
     "Register": "Register",
     "ForgotPassword": "Forgot Password",
     "SendPasswordReset": "Send Password Reset Link"
+  },
+  "cardDetail": {
+    "name": "Content Detail",
+    "socialMediaShareText": "Share content on social media"
   }
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"tr": tr, "en": en};
+static const Map<String,dynamic> tr = {
+  "routeFailed": "Bir Sorun Oluştu",
+  "profile": {
+    "Profile": "Profil",
+    "ProfilSettings": "Profil Ayarları",
+    "Language": "Dil",
+    "Theme": "Tema",
+    "Exit": "Çıkış Yap"
+  },
+  "login": {
+    "Name": "İsim",
+    "EmployeeLogin": "Çalışan Girişi",
+    "Email": "E-mail",
+    "Password": "Şifre",
+    "LogIn": "Log In",
+    "Or": "ya da",
+    "AreYouRegistered": "Kayıtlı mısın ?",
+    "Register": "Kayıt Ol",
+    "ForgotPassword": "Şifremi Unuttum",
+    "SendPasswordReset": "Send Password Reset Link"
+  },
+  "cardDetail": {
+    "name": "İçerik Detay",
+    "socialMediaShareText": "İçeriği sosyal medyada paylaş"
+  }
+};
+static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
 }

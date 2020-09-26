@@ -1,3 +1,5 @@
+import 'package:SutasPersonel/core/components/time_flow_card.dart';
+import 'package:SutasPersonel/model/time_flow_card_service_model.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import '../../core/constants/colors.dart';
@@ -39,7 +41,9 @@ class HomeScreenView extends HomeScreenViewModel {
                     itemBuilder: (context, index) => StoryCard(),
                   ),
                 )
-              : TimeFlowCard();
+              : TimeFlowCard(
+                  flowCard: content,
+                );
         },
       ),
     );
@@ -58,7 +62,6 @@ class StoryCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(context.lowValue),
           child: CircleAvatar(
-            
             radius: context.width * 0.08,
             backgroundColor: AllColors.MAIN_GREEN,
             child: CircleAvatar(
@@ -68,93 +71,5 @@ class StoryCard extends StatelessWidget {
             ),
           ),
         ));
-  }
-}
-
-String desc =
-    "Aliquip qui veniam pariatur magna Aliquip qui veniam pariatur magnaAliquip qui veniam pariatur magna tempor sunt aliqua adipisicing non aliquip incididunt ad aliqua et.Duis qui mollit labore est sint reprehenderit Lorem cillum.'";
-
-class TimeFlowCard extends StatelessWidget {
-  const TimeFlowCard({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: context.lowValue),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black26,
-                spreadRadius: 0,
-                blurRadius: 2,
-                offset: Offset(0, 2))
-          ],
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: context.lowValue, horizontal: context.normalValue),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: AutoSizeText(
-                  "SÜTAŞ’A MÜŞTERİ DENEYİMİNİ EN İYİ YÖNETEN MARKA ÖDÜLÜ",
-                  style: context.textTheme.subtitle1
-                      .copyWith(fontWeight: FontWeight.w500),
-                  textAlign: TextAlign.left,
-                  maxLines: 2,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  bottom: context.lowValue, right: context.normalValue),
-              child: Container(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "05.12.2019 - 16.47",
-                    style: context.textTheme.overline.copyWith(
-                        color: AllColors.ONBOARDING_GRAY,
-                        letterSpacing: 0.15,
-                        fontWeight: FontWeight.w200),
-                  )),
-            ),
-            Image.network(
-              "https://www.sutas.com.tr/uploads/slides/home/diyar-market/desktop.jpg?20200926125128",
-              fit: BoxFit.fitWidth,
-            ),
-            Padding(
-              padding: EdgeInsets.all(context.normalValue),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Flexible(
-                    flex: 9,
-                    child: Container(
-                        child: AutoSizeText(desc,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            maxLines: 3,
-                            style: context.textTheme.caption
-                                .copyWith(height: 1.5))),
-                  ),
-                  Flexible(
-                      flex: 1,
-                      child: Center(
-                          child: Icon(Icons.chevron_right,
-                              color: AllColors.ONBOARDING_GRAY)))
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
   }
 }

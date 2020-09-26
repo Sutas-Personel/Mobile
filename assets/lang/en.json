@@ -8,7 +8,7 @@
     "Exit": "Exit"
   },
   "login": {
-    "Name" :"Name",
+    "Name": "Name",
     "EmployeeLogin": "Employee Login",
     "Email": "E-mail",
     "Password": "Password",
@@ -18,5 +18,9 @@
     "Register": "Register",
     "ForgotPassword": "Forgot Password",
     "SendPasswordReset": "Send Password Reset Link"
+  },
+  "cardDetail": {
+    "name": "Content Detail",
+    "socialMediaShareText": "Share content on social media"
   }
 }

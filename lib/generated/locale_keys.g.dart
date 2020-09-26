@@ -19,5 +19,8 @@ abstract class  LocaleKeys {
   static const login_ForgotPassword = 'login.ForgotPassword';
   static const login_SendPasswordReset = 'login.SendPasswordReset';
   static const login = 'login';
+  static const cardDetail_name = 'cardDetail.name';
+  static const cardDetail_socialMediaShareText = 'cardDetail.socialMediaShareText';
+  static const cardDetail = 'cardDetail';
 
 }

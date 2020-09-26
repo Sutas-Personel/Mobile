@@ -8,7 +8,7 @@
     "Exit": "Çıkış Yap"
   },
   "login": {
-    "Name" :"İsim",
+    "Name": "İsim",
     "EmployeeLogin": "Çalışan Girişi",
     "Email": "E-mail",
     "Password": "Şifre",
@@ -18,9 +18,10 @@
     "Register": "Kayıt Ol",
     "ForgotPassword": "Şifremi Unuttum",
     "SendPasswordReset": "Send Password Reset Link"
-
-    
-
-
+  }
+  ,
+  "cardDetail":{
+    "name":"İçerik Detay",
+    "socialMediaShareText":"İçeriği sosyal medyada paylaş"
   }
 }
