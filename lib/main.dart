@@ -9,13 +9,15 @@ import 'package:SutasPersonel/view/profil_screen/profil.dart';
 import 'package:SutasPersonel/view/register_page/register_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0092ad724dd4c6a7d0a04c1762b444a586634a96
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 
 import 'core/constants/app_constants.dart';
 import 'core/init/lang/language_manager.dart';
-import 'view/story_screen/story_screen.dart';
+import 'view/home_screen/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +33,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
+<<<<<<< HEAD
       home: OperationsScreen(),
+=======
+      home: HomeScreen(),
+>>>>>>> 0092ad724dd4c6a7d0a04c1762b444a586634a96
     );
   }
 }
