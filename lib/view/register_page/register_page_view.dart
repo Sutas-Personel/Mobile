@@ -84,6 +84,7 @@ class RegisterPageView extends RegisterPageViewModel {
             SizedBox(
               height: context.height * 0.02,
             ),
+<<<<<<< HEAD
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -103,6 +104,58 @@ class RegisterPageView extends RegisterPageViewModel {
                   color: AllColors.INPUT_WHITE,
                   height: 2,
                   width: context.width * 0.36,
+=======
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Form(
+                child: Column(
+                  children: [
+                    InputWidget(nameTextController,
+                        LocaleKeys.login_Name.locale, nameFunc, false),
+                    SizedBox(
+                      height: context.height * 0.03,
+                    ),
+                    InputWidget(emailTextController,
+                        LocaleKeys.login_Email.locale, emailFunc, false),
+                    SizedBox(
+                      height: context.height * 0.03,
+                    ),
+                    InputWidget(passwordTextContoller,
+                        LocaleKeys.login_Password.locale, passFunc, true),
+                    SizedBox(height: context.height * 0.08),
+                    ButtonWidget(
+                        LocaleKeys.login_LogIn.locale, registerOnpress),
+                    SizedBox(
+                      height: context.height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          color: AllColors.INPUT_WHITE,
+                          height: 2,
+                          width: context.width * 0.25,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Text(
+                            LocaleKeys.login_AreYouRegistered.locale,
+                            style: TextStyle(color: AllColors.INPUT_WHITE),
+                          ),
+                        ),
+                        Container(
+                          color: AllColors.INPUT_WHITE,
+                          height: 2,
+                          width: context.width * 0.25,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: context.height * 0.02,
+                    ),
+                    ButtonWidget(LocaleKeys.login_Register.locale, onPressLogIn)
+                  ],
+>>>>>>> 5a92d17f8f493f6fb464a2b7176689d2c4a7dd29
                 ),
               ],
             ),
