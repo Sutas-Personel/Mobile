@@ -6,11 +6,15 @@ import 'package:SutasPersonel/core/extension/context_entension.dart';
 import '../constants/colors.dart';
 import '../constants/font_size_const.dart';
 
+typedef void ButtonCallback();
+
 class ButtonWidget extends StatelessWidget {
   String buttonTitle;
-  Function onPress;
-
-  ButtonWidget(this.buttonTitle, this.onPress);
+  final ButtonCallback onTap;
+  ButtonWidget(
+    this.buttonTitle,
+    this.onTap,
+  );
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: context.height * 0.02),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         color: AllColors.INPUT_WHITE,
-        onPressed: onPress,
+        onPressed: onTap,
         child: Text(
           buttonTitle,
           style: TextStyle(
