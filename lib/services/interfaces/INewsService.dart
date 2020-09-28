@@ -1,4 +1,4 @@
-import 'package:SutasPersonel/view/models/news_model.dart';
+import 'package:SutasPersonel/models/news_model.dart';
 
 import '../news_services.dart';
 

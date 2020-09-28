@@ -1,6 +1,6 @@
 import 'package:SutasPersonel/core/constants/http_request_enum.dart';
-import 'package:SutasPersonel/view/models/story_model.dart';
-import 'package:SutasPersonel/view/services/base_services.dart';
+import 'package:SutasPersonel/models/story_model.dart';
+import 'package:SutasPersonel/services/base_services.dart';
 
 import 'interfaces/IStoryServices.dart';
 
@@ -13,8 +13,8 @@ class Story extends BaseService implements IStoryService {
 
   Story._init();
 
-  Future<List<StoryModel>> getStoryList() {
-    return (await coreDio.fetch<List<StoryModel>, StoryModel>("news/getAll",
+  Future<List<StoryModel>> getStoryList() async {
+    return (await coreDio.fetch<List<StoryModel>, StoryModel>("story/getAll",
             type: HttpTypes.GET, parseModel: StoryModel()))
         .data;
   }

@@ -1,8 +1,8 @@
 import 'package:SutasPersonel/core/base/base_model.dart';
 import 'package:SutasPersonel/core/constants/http_request_enum.dart';
-import 'package:SutasPersonel/view/models/news_model.dart';
-import 'package:SutasPersonel/view/services/base_services.dart';
-import 'package:SutasPersonel/view/services/interfaces/INewsService.dart';
+import 'package:SutasPersonel/models/news_model.dart';
+import 'package:SutasPersonel/services/base_services.dart';
+import 'package:SutasPersonel/services/interfaces/INewsService.dart';
 
 class News extends BaseService implements INewsService {
   static News _instance;
