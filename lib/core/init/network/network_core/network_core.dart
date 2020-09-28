@@ -1,6 +1,4 @@
-import 'package:SutasPersonel/core/base/base_model.dart';
-
-import '../core_dio.dart';
+part of "../core_dio.dart";
 
 extension _CoreDioOperations on CoreDio {
   R _responseParser<R>(BaseModel model, dynamic data) {
