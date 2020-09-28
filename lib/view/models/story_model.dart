@@ -30,5 +30,6 @@ class StoryModel implements BaseModel<StoryModel> {
     media = json['media'];
     duration = json['duration'];
     user = json['user'];
+    throw UnimplementedError();
   }
 }
