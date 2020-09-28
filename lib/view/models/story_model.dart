@@ -1,12 +1,14 @@
-class Story {
+import 'package:SutasPersonel/core/base/base_model.dart';
+
+class StoryModel implements BaseModel<StoryModel> {
   String url;
   String media;
   String duration;
   String user;
 
-  Story({this.url, this.media, this.duration, this.user});
+  StoryModel({this.url, this.media, this.duration, this.user});
 
-  Story.fromJson(Map<String, dynamic> json) {
+  StoryModel.fromJson(Map<String, dynamic> json) {
     url = json['url'];
     media = json['media'];
     duration = json['duration'];
@@ -20,5 +22,13 @@ class Story {
     data['duration'] = this.duration;
     data['user'] = this.user;
     return data;
+  }
+
+  @override
+  StoryModel fromJson(Map<String, Object> json) {
+    url = json['url'];
+    media = json['media'];
+    duration = json['duration'];
+    user = json['user'];
   }
 }

@@ -1,4 +1,6 @@
-class News {
+import 'package:SutasPersonel/core/base/base_model.dart';
+
+class NewsModel implements BaseModel<NewsModel> {
   String sId;
   String title;
   String image;
@@ -6,9 +8,10 @@ class News {
   String date;
   int iV;
 
-  News({this.sId, this.title, this.image, this.content, this.date, this.iV});
+  NewsModel(
+      {this.sId, this.title, this.image, this.content, this.date, this.iV});
 
-  News.fromJson(Map<String, dynamic> json) {
+  NewsModel.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
     title = json['title'];
     image = json['image'];
@@ -26,5 +29,16 @@ class News {
     data['date'] = this.date;
     data['__v'] = this.iV;
     return data;
+  }
+
+  @override
+  NewsModel fromJson(Map<String, Object> json) {
+    sId = json['_id'];
+    title = json['title'];
+    image = json['image'];
+    content = json['content'];
+    date = json['date'];
+    iV = json['__v'];
+    throw UnimplementedError();
   }
 }

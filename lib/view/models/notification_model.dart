@@ -1,4 +1,6 @@
-class Notifications {
+import 'package:SutasPersonel/core/base/base_model.dart';
+
+class NotificationsModel implements BaseModel<NotificationsModel> {
   String important;
   String sId;
   String title;
@@ -6,7 +8,7 @@ class Notifications {
   String date;
   int iV;
 
-  Notifications(
+  NotificationsModel(
       {this.important,
       this.sId,
       this.title,
@@ -14,7 +16,7 @@ class Notifications {
       this.date,
       this.iV});
 
-  Notifications.fromJson(Map<String, dynamic> json) {
+  NotificationsModel.fromJson(Map<String, dynamic> json) {
     important = json['important'];
     sId = json['_id'];
     title = json['title'];
@@ -32,5 +34,15 @@ class Notifications {
     data['date'] = this.date;
     data['__v'] = this.iV;
     return data;
+  }
+
+  @override
+  NotificationsModel fromJson(Map<String, Object> json) {
+    important = json['important'];
+    sId = json['_id'];
+    title = json['title'];
+    subtitle = json['subtitle'];
+    date = json['date'];
+    iV = json['__v'];
   }
 }
