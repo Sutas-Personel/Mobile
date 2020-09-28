@@ -1,8 +1,8 @@
 import 'package:SutasPersonel/core/constants/http_request_enum.dart';
-import 'package:SutasPersonel/view/models/notification_model.dart';
-import 'package:SutasPersonel/view/models/response.dart';
-import 'package:SutasPersonel/view/models/story_model.dart';
-import 'package:SutasPersonel/view/services/base_services.dart';
+import 'package:SutasPersonel/models/notification_model.dart';
+import 'package:SutasPersonel/models/response.dart';
+import 'package:SutasPersonel/services/base_services.dart';
+
 import 'package:dio/dio.dart';
 
 import 'interfaces/INotificationServices.dart';
