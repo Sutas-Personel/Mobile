@@ -1,30 +1,11 @@
-import 'dart:convert';
-
 import 'package:SutasPersonel/core/components/list_tile_card.dart';
 import 'package:SutasPersonel/core/constants/colors.dart';
 import 'package:SutasPersonel/generated/locale_keys.g.dart';
-import 'package:SutasPersonel/model/message_servis_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 import 'notifications_view_model.dart';
 import '../../core/extension/string_extension.dart';
 
-List<Message> message = [
-  Message(header: "Zachery", desc: "P.O. Box 260, 9464 Risus. Av."),
-  Message(header: "Laith", desc: "6777 Semper Street"),
-  Message(header: "Alexander", desc: "P.O. Box 207, 6433 Nascetur Rd."),
-  Message(header: "Justin", desc: "5263 Nulla Ave"),
-  Message(header: "Gabriel", desc: "8582 Sed St."),
-  Message(header: "Burton", desc: "P.O. Box 658, 645 Arcu Avenue"),
-  Message(header: "Henry", desc: "P.O. Box 431, 9785 Nunc St."),
-  Message(header: "Rudyard", desc: "P.O. Box 884, 6309 Erat. Road"),
-  Message(header: "Quinlan", desc: "173-8386 Pellentesque St."),
-  Message(header: "Ferdinand", desc: "P.O. Box 289, 2668 Felis Avenue"),
-  Message(header: "Brennan", desc: "1566 Velit. Avenue"),
-  Message(header: "Tobias", desc: "977 Neque St."),
-  Message(header: "Omar", desc: "Ap #693-1175 Duis Road"),
-  Message(header: "Harrison", desc: "P.O. Box 953, 7775 Hendrerit Road")
-];
 
 class NotificationsScreenView extends NotificationsScreenViewModel {
   @override
@@ -43,15 +24,15 @@ class NotificationsScreenView extends NotificationsScreenViewModel {
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => Divider(),
-        itemCount: message.length,
+        itemCount: notifications.length,
         itemBuilder: (context, index) => Dismissible(
           key: UniqueKey(),
           child: ListTileCard(
-            message: message[index],
+            message: notifications[index],
           ),
           onDismissed: (direction) {
             setState(() {
-              message.removeAt(index);
+              notifications.removeAt(index);
             });
           },
           secondaryBackground: Container(

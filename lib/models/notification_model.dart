@@ -1,6 +1,6 @@
 import 'package:SutasPersonel/core/base/base_model.dart';
 
-class NotificationsModel implements BaseModel<NotificationsModel> {
+class NotificationsModel implements IBaseModel<NotificationsModel> {
   String important;
   String sId;
   String title;

@@ -1,17 +1,17 @@
-import 'package:SutasPersonel/core/constants/http_request_enum.dart';
+import 'package:SutasPersonel/core/constants/http_enums.dart';
 import 'package:SutasPersonel/models/story_model.dart';
 import 'package:SutasPersonel/services/base_services.dart';
 
 import 'interfaces/IStoryServices.dart';
 
-class Story extends BaseService implements IStoryService {
-  static Story _instance;
-  static Story get instance {
-    if (_instance == null) _instance = Story._init();
+class StoryService extends BaseService implements IStoryService {
+  static StoryService _instance;
+  static StoryService get instance {
+    if (_instance == null) _instance = StoryService._init();
     return _instance;
   }
 
-  Story._init();
+  StoryService._init();
 
   Future<List<StoryModel>> getStoryList() async {
     return (await coreDio.fetch<List<StoryModel>, StoryModel>("story/getAll",

@@ -1,11 +1,11 @@
-import 'package:SutasPersonel/model/story_servis_model.dart';
+import 'package:SutasPersonel/models/story_model.dart';
 import 'package:SutasPersonel/view/story_screen/story_screen.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 import 'story_card.dart';
 
 class StoryCardLists extends StatefulWidget {
-  final List<Story> stories;
+  final List<StoryModel> stories;
 
   StoryCardLists({Key key, this.stories}) : super(key: key);
 
@@ -29,9 +29,17 @@ class _StoryCardListsState extends State<StoryCardLists> {
                 MaterialPageRoute(builder: (context) => StoryScreen()),
               );
             },
-            child:
-                StoryCard(imgUrl: widget.stories[index].user.profileImageUrl)),
+            child: StoryCard(
+                imgUrl: storyUserUrl(
+                    storyUrl: widget.stories[index].url,
+                    isStoryMedia: widget.stories[index].media))),
       ),
     );
+  }
+
+  storyUserUrl({isStoryMedia, storyUrl}) {
+    String logo =
+        "https://www.sutas.com.tr/uploads/setting/seo/6281b9c4a8e57cb110cdda5bdc06ffbc.png";
+    return isStoryMedia == "IMAGE" ? storyUrl : logo;
   }
 }

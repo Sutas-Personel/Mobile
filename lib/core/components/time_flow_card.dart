@@ -1,5 +1,5 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
-import 'package:SutasPersonel/model/time_flow_card_service_model.dart';
+import 'package:SutasPersonel/models/news_model.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -8,7 +8,7 @@ import '../../core/extension/string_extension.dart';
 import '../../generated/locale_keys.g.dart';
 
 class TimeFlowCard extends StatelessWidget {
-  final TimeFlow flowCard;
+  final NewsModel flowCard;
   final bool isHomeScreen;
 
   List<Map<String, dynamic>> socialMedia = [
@@ -99,7 +99,7 @@ class TimeFlowCard extends StatelessWidget {
         Flexible(
           flex: 9,
           child: Container(
-              child: AutoSizeText(flowCard.desc,
+              child: AutoSizeText(flowCard.content,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   maxLines: 3,
@@ -114,7 +114,7 @@ class TimeFlowCard extends StatelessWidget {
     );
   }
 
-  Text timeFlowCardDesc() => Text(flowCard.desc);
+  Text timeFlowCardDesc() => Text(flowCard.content);
 
   Row timeFlowCardSocialMediaArea(BuildContext context) {
     return Row(
@@ -143,7 +143,7 @@ class TimeFlowCard extends StatelessWidget {
 
   Image timeFlowCardImage() {
     return Image.network(
-      flowCard.imgUrl,
+      flowCard.image,
       fit: BoxFit.fitWidth,
     );
   }
@@ -164,7 +164,7 @@ class TimeFlowCard extends StatelessWidget {
     return Container(
       alignment: Alignment.centerLeft,
       child: AutoSizeText(
-        flowCard.header,
+        flowCard.title,
         style:
             context.textTheme.subtitle1.copyWith(fontWeight: FontWeight.w500),
         textAlign: TextAlign.left,
