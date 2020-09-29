@@ -21,6 +21,7 @@ class BottomNavigationView extends BottomNavigationViewModel {
           unselectedLabelStyle: TextStyle(color: AllColors.BLUE_GRAY),
           unselectedItemColor: AllColors.BLUE_GRAY,
           selectedItemColor: AllColors.MAIN_GREEN,
+          backgroundColor: Theme.of(context).bottomAppBarColor,
           currentIndex: sellectedItem,
           items: [
             BottomNavigationBarItem(
