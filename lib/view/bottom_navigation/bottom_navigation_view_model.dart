@@ -11,7 +11,7 @@ abstract class BottomNavigationViewModel extends State<BottomNavigation> {
   int sellectedItem = 0;
   List<Widget> bottomPage;
   var main_page_key = PageStorageKey("main_page");
-  var logic_page = PageStorageKey("logic_page");
+  var operation_key = PageStorageKey("operation_page");
   var notification_key = PageStorageKey("notification_page");
   var profile_key = PageStorageKey("profile_page");
   @override
@@ -20,7 +20,7 @@ abstract class BottomNavigationViewModel extends State<BottomNavigation> {
     super.initState();
     bottomPage = [
       HomeScreen(main_page_key),
-      OperationsScreen(logic_page),
+      OperationsScreen(operation_key),
       NotificationsScreen(notification_key),
       ProfilScreen(profile_key),
     ];

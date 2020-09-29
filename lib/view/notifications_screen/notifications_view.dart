@@ -33,7 +33,7 @@ class NotificationsScreenView extends NotificationsScreenViewModel {
       appBar: AppBar(
         leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
         title: Text(
-          LocaleKeys.notifications_name.locale.toUpperCase(),
+          LocaleKeys.notifications_name.locale.toString(),
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),

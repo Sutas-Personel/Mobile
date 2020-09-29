@@ -14,43 +14,11 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> en = {
-  "routeFailed": "Bir sorun oluştu",
-  "profile": {
-    "Profile": "Profil",
-    "ProfilSettings": "Profil Settings",
-    "Language": "Language",
-    "Theme": "Theme",
-    "Exit": "Exit"
-  },
-  "login": {
-    "Name": "Name",
-    "EmployeeLogin": "Employee Login",
-    "Email": "E-mail",
-    "Password": "Password",
-    "LogIn": "Log In",
-    "Or": "Or",
-    "AreYouRegistered": "Are You Registered",
-    "Register": "Register",
-    "ForgotPassword": "Forgot Password",
-    "SendPasswordReset": "Send Password Reset Link"
-  },
-  "cardDetail": {
-    "name": "Content Detail",
-    "socialMediaShareText": "Share content on social media"
-  },
-  "home": {
-    "name": "Time Line"
-  },
-  "notifications": {
-    "name": "Bildirimler"
-  }
-};
-static const Map<String,dynamic> tr = {
+  static const Map<String,dynamic> tr = {
   "routeFailed": "Bir Sorun Oluştu",
   "profile": {
     "Profile": "Profil",
-    "ProfilSettings": "Profil Ayarları",
+    "ProfileSettings": "Profil Ayarları",
     "Language": "Dil",
     "Theme": "Tema",
     "Exit": "Çıkış Yap"
@@ -75,8 +43,70 @@ static const Map<String,dynamic> tr = {
     "name": "Zaman Akışı"
   },
   "notifications": {
-    "name": "Bildirimler"
+    "name": "BİLDİRİMLER"
+  },
+  "operation": {
+    "operationName": "İŞLEMLER",
+    "permissionProcedures": "İzin İşlemleri",
+    "administrativeOperations": "Yönetici İşlemleri",
+    "serviceOperations": "Servis İşlemleri",
+    "passwordOperations": "Parola İşlemleri",
+    "collectionTransactions": "Tahsilat İşlemleri",
+    "chillerOperations": "Soğutucu İşlemleri"
+  },
+  "navigationBar": {
+    "home": "Ana Sayfa",
+    "operations": "İşlemler",
+    "notifications": "Bildirimler",
+    "profile": "Profil"
   }
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
+static const Map<String,dynamic> en = {
+  "routeFailed": "Bir sorun oluştu",
+  "profile": {
+    "Profile": "Profile",
+    "ProfileSettings": "Profile Settings",
+    "Language": "Language",
+    "Theme": "Theme",
+    "Exit": "Exit"
+  },
+  "login": {
+    "Name": "Name",
+    "EmployeeLogin": "Employee Login",
+    "Email": "E-mail",
+    "Password": "Password",
+    "LogIn": "Log In",
+    "Or": "Or",
+    "AreYouRegistered": "Are You Registered",
+    "Register": "Register",
+    "ForgotPassword": "Forgot Password",
+    "SendPasswordReset": "Send Password Reset Link"
+  },
+  "cardDetail": {
+    "name": "Content Detail",
+    "socialMediaShareText": "Share content on social media"
+  },
+  "home": {
+    "name": "Time Line"
+  },
+  "operation": {
+    "operationName": "OPERATION",
+    "permissionProcedures": "Permission Procedures",
+    "administrativeOperations": "Administrative Operations",
+    "serviceOperations": "Service Operations",
+    "passwordOperations": "Password Operations",
+    "collectionTransactions": "Collection Transactions",
+    "chillerOperations": "Chiller Operations"
+  },
+  "notifications": {
+    "name": "NOTIFICATIONS"
+  },
+  "navigationBar": {
+    "home": "Home",
+    "operations": "Operations",
+    "notifications": "Notifications",
+    "profile": "Profile"
+  }
+};
+static const Map<String, Map<String,dynamic>> mapLocales = {"tr": tr, "en": en};
 }

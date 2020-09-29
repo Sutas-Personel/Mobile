@@ -1,6 +1,8 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
+import 'package:SutasPersonel/core/init/lang/language_manager.dart';
 import 'package:SutasPersonel/generated/locale_keys.g.dart';
 import 'package:SutasPersonel/view/profil_screen/profil_view_model.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 import '../../core/extension/string_extension.dart';
@@ -19,10 +21,12 @@ class ProfilScreenView extends ProfilScreenViewModel {
           style:
               context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
         ),
-        actions: [Padding(
-          padding: EdgeInsets.only(right: context.lowValue),
-          child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
-        )],
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: context.lowValue),
+            child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
+          )
+        ],
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
@@ -121,11 +125,28 @@ class ProfilScreenView extends ProfilScreenViewModel {
       children: [
         ProfilListCard(
             icon: Icons.settings,
-            title: LocaleKeys.profile_ProfilSettings.locale),
-        ProfilListCard(
-            icon: Icons.language,
-            title: LocaleKeys.profile_Language.locale,
-            isSwitch: isLanguage),
+            title: LocaleKeys.profile_ProfileSettings.locale),
+        ListTile(
+          leading: Icon(Icons.language),
+          title: Text(
+            LocaleKeys.profile_Language.locale,
+            style: context.textTheme.bodyText1,
+          ),
+          trailing: Switch(
+              value: isLanguage,
+              onChanged: (value) {
+                setState(() {
+                  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                    print("tr");
+                    final tr = LanguageManager.instance.trLocale;
+                    final en = LanguageManager.instance.enLocale;
+                    EasyLocalization.of(context).locale =
+                        context.locale == tr ? en : tr;
+                    isLanguage = !value;
+                  });
+                });
+              }),
+        ),
         ProfilListCard(
             icon: Icons.brightness_3,
             title: LocaleKeys.profile_Theme.locale,
@@ -169,7 +190,10 @@ class _ProfilListCardState extends State<ProfilListCard> {
             onTap: widget.click == null ? null : widget.click,
             child: ListTile(
               leading: Icon(widget.icon),
-              title: Text(widget.title,style: context.textTheme.bodyText1,),
+              title: Text(
+                widget.title,
+                style: context.textTheme.bodyText1,
+              ),
               trailing:
                   widget.isSwitch == null ? null : profilCardSwitchButton(),
             ),
@@ -185,7 +209,7 @@ class _ProfilListCardState extends State<ProfilListCard> {
         value: widget.isSwitch,
         onChanged: (val) {
           setState(() {
-            widget.isSwitch = val;
+            return widget.isSwitch = val;
           });
         });
   }
