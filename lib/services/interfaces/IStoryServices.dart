@@ -1,4 +1,4 @@
-import 'package:SutasPersonel/view/models/story_model.dart';
+import 'package:SutasPersonel/models/story_model.dart';
 
 abstract class IStoryService {
   Future<List<StoryModel>> getStoryList();
