@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final ThemeData myTheme = ThemeData(
+final ThemeData myDarkTheme = ThemeData(
   primarySwatch: MaterialColor(4280361249, {
     50: Color(0xfff2f2f2),
     100: Color(0xffe6e6e6),
@@ -16,7 +16,7 @@ final ThemeData myTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: Color(0xff212121),
   primaryColorBrightness: Brightness.dark,
-  primaryColorLight: Color(0xff9e9e9e),
+  primaryColorLight: Color(0xffffffff),
   primaryColorDark: Color(0xff000000),
   accentColor: Color(0xff64ffda),
   accentColorBrightness: Brightness.light,
@@ -30,7 +30,7 @@ final ThemeData myTheme = ThemeData(
   selectedRowColor: Color(0xfff5f5f5),
   unselectedWidgetColor: Color(0xb3ffffff),
   disabledColor: Color(0x62ffffff),
-  buttonColor: Color(0xff00cc6c),
+  buttonColor: Color(0xff666666),
   toggleableActiveColor: Color(0xff64ffda),
   secondaryHeaderColor: Color(0xff616161),
   textSelectionColor: Color(0xff64ffda),
@@ -40,98 +40,44 @@ final ThemeData myTheme = ThemeData(
   dialogBackgroundColor: Color(0xff424242),
   indicatorColor: Color(0xff64ffda),
   hintColor: Color(0x80ffffff),
-  errorColor: Color(0xffd32f2f),
+  errorColor: Colors.brown,
   buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.normal,
-    minWidth: 88.0,
-    height: 36.0,
-    padding: EdgeInsets.only(top: 0.0, bottom: 0.0, left: 16.0, right: 16.0),
+    minWidth: 88,
+    height: 36,
+    padding: EdgeInsets.only(top: 0, bottom: 0, left: 16, right: 16),
     shape: RoundedRectangleBorder(
       side: BorderSide(
         color: Color(0xff000000),
-        width: 0.0,
+        width: 0,
         style: BorderStyle.none,
       ),
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
     alignedDropdown: false,
-    buttonColor: Color(0xff00cc6c),
+    buttonColor: Color(0xff666666),
     disabledColor: Color(0x61ffffff),
     highlightColor: Color(0x29ffffff),
     splashColor: Color(0x1fffffff),
     focusColor: Color(0x1fffffff),
     hoverColor: Color(0x0affffff),
     colorScheme: ColorScheme(
-      primary: Color(0xff006e3a),
+      primary: Color(0xfffefefe),
       primaryVariant: Color(0xff000000),
       secondary: Color(0xff64ffda),
       secondaryVariant: Color(0xff00bfa5),
       surface: Color(0xff424242),
       background: Color(0xff616161),
-      error: Color(0xffd32f2f),
-      onPrimary: Color(0xffffffff),
+      error: Color(0xff64ffda),
+      onPrimary: Color(0xff64ffda),
       onSecondary: Color(0xff000000),
       onSurface: Color(0xffffffff),
-      onBackground: Color(0xffffffff),
+      onBackground: Color(0xff000000),
       onError: Color(0xff000000),
       brightness: Brightness.dark,
     ),
   ),
   textTheme: TextTheme(
-    display4: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display3: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display2: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display1: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    headline: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    title: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    subhead: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    body2: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    body1: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
     caption: TextStyle(
       color: Color(0xb3ffffff),
       fontSize: null,
@@ -139,12 +85,6 @@ final ThemeData myTheme = ThemeData(
       fontStyle: FontStyle.normal,
     ),
     button: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    subtitle: TextStyle(
       color: Color(0xffffffff),
       fontSize: null,
       fontWeight: FontWeight.w400,
@@ -158,60 +98,6 @@ final ThemeData myTheme = ThemeData(
     ),
   ),
   primaryTextTheme: TextTheme(
-    display4: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display3: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display2: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display1: TextStyle(
-      color: Color(0xb3ffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    headline: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    title: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    subhead: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    body2: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    body1: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
     caption: TextStyle(
       color: Color(0xb3ffffff),
       fontSize: null,
@@ -219,12 +105,6 @@ final ThemeData myTheme = ThemeData(
       fontStyle: FontStyle.normal,
     ),
     button: TextStyle(
-      color: Color(0xffffffff),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    subtitle: TextStyle(
       color: Color(0xffffffff),
       fontSize: null,
       fontWeight: FontWeight.w400,
@@ -238,60 +118,6 @@ final ThemeData myTheme = ThemeData(
     ),
   ),
   accentTextTheme: TextTheme(
-    display4: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display3: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display2: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    display1: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    headline: TextStyle(
-      color: Color(0xdd000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    title: TextStyle(
-      color: Color(0xdd000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    subhead: TextStyle(
-      color: Color(0xdd000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    body2: TextStyle(
-      color: Color(0xdd000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    body1: TextStyle(
-      color: Color(0xdd000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
     caption: TextStyle(
       color: Color(0x8a000000),
       fontSize: null,
@@ -300,12 +126,6 @@ final ThemeData myTheme = ThemeData(
     ),
     button: TextStyle(
       color: Color(0xdd000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    subtitle: TextStyle(
-      color: Color(0xff000000),
       fontSize: null,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
@@ -343,10 +163,8 @@ final ThemeData myTheme = ThemeData(
       fontStyle: FontStyle.normal,
     ),
     errorMaxLines: null,
-    hasFloatingPlaceholder: true,
     isDense: false,
-    contentPadding:
-        EdgeInsets.only(top: 12.0, bottom: 12.0, left: 0.0, right: 0.0),
+    contentPadding: EdgeInsets.only(top: 12, bottom: 12, left: 0, right: 0),
     isCollapsed: false,
     prefixStyle: TextStyle(
       color: Color(0xffffffff),
@@ -371,7 +189,7 @@ final ThemeData myTheme = ThemeData(
     errorBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xff000000),
-        width: 1.0,
+        width: 1,
         style: BorderStyle.solid,
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -379,7 +197,7 @@ final ThemeData myTheme = ThemeData(
     focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xff000000),
-        width: 1.0,
+        width: 1,
         style: BorderStyle.solid,
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -387,7 +205,7 @@ final ThemeData myTheme = ThemeData(
     focusedErrorBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xff000000),
-        width: 1.0,
+        width: 1,
         style: BorderStyle.solid,
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -395,7 +213,7 @@ final ThemeData myTheme = ThemeData(
     disabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xff000000),
-        width: 1.0,
+        width: 1,
         style: BorderStyle.solid,
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -403,7 +221,7 @@ final ThemeData myTheme = ThemeData(
     enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xff000000),
-        width: 1.0,
+        width: 1,
         style: BorderStyle.solid,
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -411,7 +229,7 @@ final ThemeData myTheme = ThemeData(
     border: UnderlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xff000000),
-        width: 1.0,
+        width: 1,
         style: BorderStyle.solid,
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -419,18 +237,18 @@ final ThemeData myTheme = ThemeData(
   ),
   iconTheme: IconThemeData(
     color: Color(0xffffffff),
-    opacity: 1.0,
-    size: 24.0,
+    opacity: 1,
+    size: 24,
   ),
   primaryIconTheme: IconThemeData(
     color: Color(0xffffffff),
-    opacity: 1.0,
-    size: 24.0,
+    opacity: 1,
+    size: 24,
   ),
   accentIconTheme: IconThemeData(
     color: Color(0xff000000),
-    opacity: 1.0,
-    size: 24.0,
+    opacity: 1,
+    size: 24,
   ),
   sliderTheme: SliderThemeData(
     activeTrackColor: null,
@@ -443,10 +261,8 @@ final ThemeData myTheme = ThemeData(
     disabledInactiveTickMarkColor: null,
     thumbColor: null,
     disabledThumbColor: null,
-    thumbShape: null(),
     overlayColor: null,
     valueIndicatorColor: null,
-    valueIndicatorShape: null(),
     showValueIndicator: null,
     valueIndicatorTextStyle: TextStyle(
       color: Color(0xdd000000),
@@ -465,14 +281,14 @@ final ThemeData myTheme = ThemeData(
     brightness: Brightness.dark,
     deleteIconColor: Color(0xdeffffff),
     disabledColor: Color(0x0cffffff),
-    labelPadding: EdgeInsets.only(top: 0.0, bottom: 0.0, left: 8.0, right: 8.0),
+    labelPadding: EdgeInsets.only(top: 0, bottom: 0, left: 8, right: 8),
     labelStyle: TextStyle(
       color: Color(0xdeffffff),
       fontSize: null,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
-    padding: EdgeInsets.only(top: 4.0, bottom: 4.0, left: 4.0, right: 4.0),
+    padding: EdgeInsets.only(top: 4, bottom: 4, left: 4, right: 4),
     secondaryLabelStyle: TextStyle(
       color: Color(0x3dffffff),
       fontSize: null,
@@ -484,7 +300,7 @@ final ThemeData myTheme = ThemeData(
     shape: StadiumBorder(
         side: BorderSide(
       color: Color(0xff000000),
-      width: 0.0,
+      width: 0,
       style: BorderStyle.none,
     )),
   ),
@@ -492,7 +308,7 @@ final ThemeData myTheme = ThemeData(
       shape: RoundedRectangleBorder(
     side: BorderSide(
       color: Color(0xff000000),
-      width: 0.0,
+      width: 0,
       style: BorderStyle.none,
     ),
     borderRadius: BorderRadius.all(Radius.circular(0.0)),
