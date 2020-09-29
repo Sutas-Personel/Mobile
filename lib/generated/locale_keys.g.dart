@@ -3,7 +3,7 @@
 abstract class  LocaleKeys {
   static const routeFailed = 'routeFailed';
   static const profile_Profile = 'profile.Profile';
-  static const profile_ProfilSettings = 'profile.ProfilSettings';
+  static const profile_ProfileSettings = 'profile.ProfileSettings';
   static const profile_Language = 'profile.Language';
   static const profile_Theme = 'profile.Theme';
   static const profile_Exit = 'profile.Exit';
@@ -26,5 +26,18 @@ abstract class  LocaleKeys {
   static const home = 'home';
   static const notifications_name = 'notifications.name';
   static const notifications = 'notifications';
+  static const operation_operationName = 'operation.operationName';
+  static const operation_permissionProcedures = 'operation.permissionProcedures';
+  static const operation_administrativeOperations = 'operation.administrativeOperations';
+  static const operation_serviceOperations = 'operation.serviceOperations';
+  static const operation_passwordOperations = 'operation.passwordOperations';
+  static const operation_collectionTransactions = 'operation.collectionTransactions';
+  static const operation_chillerOperations = 'operation.chillerOperations';
+  static const operation = 'operation';
+  static const navigationBar_home = 'navigationBar.home';
+  static const navigationBar_operations = 'navigationBar.operations';
+  static const navigationBar_notifications = 'navigationBar.notifications';
+  static const navigationBar_profile = 'navigationBar.profile';
+  static const navigationBar = 'navigationBar';
 
 }

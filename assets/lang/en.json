@@ -1,8 +1,8 @@
 {
   "routeFailed": "Bir sorun oluştu",
   "profile": {
-    "Profile": "Profil",
-    "ProfilSettings": "Profil Settings",
+    "Profile": "Profile",
+    "ProfileSettings": "Profile Settings",
     "Language": "Language",
     "Theme": "Theme",
     "Exit": "Exit"
@@ -26,7 +26,23 @@
   "home": {
     "name": "Time Line"
   },
+  "operation": {
+    "operationName": "OPERATION",
+    "permissionProcedures" : "Permission Procedures",
+    "administrativeOperations" : "Administrative Operations",
+    "serviceOperations" : "Service Operations",
+    "passwordOperations" : "Password Operations",
+    "collectionTransactions" : "Collection Transactions",
+    "chillerOperations" : "Chiller Operations"
+  },
   "notifications": {
-    "name": "Bildirimler"
+    "name": "NOTIFICATIONS"
+  },
+  "navigationBar":{
+    "home": "Home",
+    "operations" : "Operations",
+    "notifications": "Notifications",
+    "profile": "Profile"
+
   }
 }
