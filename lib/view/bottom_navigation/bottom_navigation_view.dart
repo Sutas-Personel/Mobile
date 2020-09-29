@@ -1,7 +1,9 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
+import 'package:SutasPersonel/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import './bottom_navigation_view_model.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import '../../core/extension/string_extension.dart';
 
 class BottomNavigationView extends BottomNavigationViewModel {
   @override
@@ -23,17 +25,17 @@ class BottomNavigationView extends BottomNavigationViewModel {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text("Home"),
+              title: Text(LocaleKeys.navigationBar_home.locale),
             ),
             BottomNavigationBarItem(
                 icon: Icon(FontAwesome5Solid.user_cog),
-                title: Text("İşlemler")),
+                title: Text(LocaleKeys.navigationBar_operations.locale)),
             BottomNavigationBarItem(
-              title: Text("Bildirimler"),
+              title: Text(LocaleKeys.navigationBar_notifications.locale),
               icon: Icon(Icons.notifications),
             ),
             BottomNavigationBarItem(
-              title: Text("Profil"),
+              title: Text(LocaleKeys.navigationBar_profile.locale),
               icon: Icon(Icons.person),
             ),
           ]),
