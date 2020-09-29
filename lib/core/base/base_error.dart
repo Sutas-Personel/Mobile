@@ -1,4 +1,4 @@
-import 'package:SutasPersonel/core/init/network/IResponse_model.dart';
+import '../init/network/model/IResponseModel.dart';
 
 class BaseError extends IErrorModel {
   final String message;

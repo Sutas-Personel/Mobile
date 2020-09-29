@@ -1,10 +1,10 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
-import 'package:SutasPersonel/model/message_servis_model.dart';
+import 'package:SutasPersonel/models/notification_model.dart';
 import 'package:flutter/material.dart';
 import '../../core/extension/context_entension.dart';
 
 class ListTileCard extends StatelessWidget {
-  Message message;
+  NotificationsModel message;
 
   ListTileCard({
     Key key,
@@ -42,11 +42,11 @@ class ListTileCard extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(bottom: context.lowValue),
                   child: Text(
-                    message.header,
+                    message.title,
                     style: context.textTheme.bodyText1,
                   ),
                 ),
-                Text(message.desc, style: context.textTheme.caption)
+                Text(message.subtitle, style: context.textTheme.caption)
               ],
             ),
           )

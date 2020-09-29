@@ -1,6 +1,11 @@
 import 'package:SutasPersonel/core/base/base_model.dart';
 
-class StoryModel implements BaseModel<StoryModel> {
+class MediaType {
+  static const String image = "IMAGE";
+  static const String video = "VIDEO";
+}
+
+class StoryModel implements IBaseModel<StoryModel> {
   String url;
   String media;
   String duration;
@@ -25,11 +30,7 @@ class StoryModel implements BaseModel<StoryModel> {
   }
 
   @override
-  StoryModel fromJson(Map<String, Object> json) {
-    url = json['url'];
-    media = json['media'];
-    duration = json['duration'];
-    user = json['user'];
-    throw UnimplementedError();
+  fromJson(Map<String, Object> json) {
+    return StoryModel.fromJson(json);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:SutasPersonel/core/base/base_model.dart';
 
-class response extends BaseModel<dynamic> {
+class response extends IBaseModel<dynamic> {
   dynamic data;
   @override
   fromJson(Map<String, Object> json) {

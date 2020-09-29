@@ -1,6 +1,4 @@
-import 'package:SutasPersonel/models/news_model.dart';
-
-import '../news_services.dart';
+import '../../models/news_model.dart';
 
 abstract class INewsService {
   Future<List<NewsModel>> getNewsList();

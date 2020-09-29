@@ -1,4 +1,4 @@
-import 'package:SutasPersonel/core/constants/http_request_enum.dart';
+import 'package:SutasPersonel/core/constants/http_enums.dart';
 import 'package:SutasPersonel/models/notification_model.dart';
 import 'package:SutasPersonel/models/response.dart';
 import 'package:SutasPersonel/services/base_services.dart';
@@ -7,14 +7,14 @@ import 'package:dio/dio.dart';
 
 import 'interfaces/INotificationServices.dart';
 
-class Notification extends BaseService implements INotificationService {
-  static Notification _instance;
-  static Notification get instance {
-    if (_instance == null) _instance = Notification._init();
+class NotificationService extends BaseService implements INotificationService {
+  static NotificationService _instance;
+  static NotificationService get instance {
+    if (_instance == null) _instance = NotificationService._init();
     return _instance;
   }
 
-  Notification._init();
+  NotificationService._init();
 
   @override
   Future<List<NotificationsModel>> getNotificationList() async {

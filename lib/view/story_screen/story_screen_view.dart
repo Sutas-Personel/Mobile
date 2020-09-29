@@ -1,5 +1,5 @@
 import 'package:SutasPersonel/core/constants/colors.dart';
-import 'package:SutasPersonel/model/story_servis_model.dart';
+import 'package:SutasPersonel/models/story_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -19,7 +19,7 @@ class StoryScreenView extends StoryScreenViewModel
 
     _pageController = PageController();
     _animationController = AnimationController(vsync: this);
-    final Story firstStory = stories.first;
+    final StoryModel firstStory = stories.first;
     _loadStory(story: firstStory, animateToPage: false);
 
     _animationController.addStatusListener((status) {
@@ -50,7 +50,7 @@ class StoryScreenView extends StoryScreenViewModel
 
   @override
   Widget build(BuildContext context) {
-    final Story story = stories[_currentIndex];
+    final StoryModel story = stories[_currentIndex];
 
     return Scaffold(
       body: GestureDetector(
@@ -63,7 +63,7 @@ class StoryScreenView extends StoryScreenViewModel
     );
   }
 
-  Widget _userAndTimeBar(Story story) {
+  Widget _userAndTimeBar(StoryModel story) {
     return Positioned(
       top: 40.0,
       left: 10.0,
@@ -89,7 +89,7 @@ class StoryScreenView extends StoryScreenViewModel
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 1.5, vertical: 10),
             child: UserInfo(
-              user: story.user,
+              story: story,
             ),
           )
         ],
@@ -103,7 +103,7 @@ class StoryScreenView extends StoryScreenViewModel
       controller: _pageController,
       itemCount: stories.length,
       itemBuilder: (context, index) {
-        final Story story = stories[index];
+        final StoryModel story = stories[index];
 
         switch (story.media) {
           case MediaType.image:
@@ -132,7 +132,7 @@ class StoryScreenView extends StoryScreenViewModel
     );
   }
 
-  void _onTap(Story story) {
+  void _onTap(StoryModel story) {
     if (story.media == MediaType.video) {
       if (_videoController.value.isPlaying) {
         // videoları dokunarak durdurma olmalı ????????
@@ -145,12 +145,13 @@ class StoryScreenView extends StoryScreenViewModel
     }
   }
 
-  void _loadStory({Story story, bool animateToPage = true}) {
+  void _loadStory({StoryModel story, bool animateToPage = true}) {
     _animationController.stop();
     _animationController.reset();
     switch (story.media) {
       case MediaType.image:
-        _animationController.duration = story.duration;
+        _animationController.duration =
+            Duration(seconds: int.parse(story.duration));
         _animationController.forward();
         break;
       case MediaType.video:
@@ -180,7 +181,7 @@ class StoryScreenView extends StoryScreenViewModel
     }
   }
 
-  _onTapDown(TapDownDetails details, Story story) {
+  _onTapDown(TapDownDetails details, StoryModel story) {
     final double screenWidth = context.width;
     final double dx = details.globalPosition
         .dx; // ekranındaki dokunmaların glabal konumunu alıyoruz.
@@ -287,8 +288,11 @@ class AnimatedBar extends StatelessWidget {
 }
 
 class UserInfo extends StatelessWidget {
-  final User user;
-  const UserInfo({Key key, this.user}) : super(key: key);
+  String sutasLogo =
+      "https://www.sutas.com.tr/uploads/setting/seo/6281b9c4a8e57cb110cdda5bdc06ffbc.png";
+  final StoryModel story;
+
+  UserInfo({Key key, this.story}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -299,7 +303,7 @@ class UserInfo extends StatelessWidget {
           backgroundColor: Colors.transparent,
           backgroundImage: CachedNetworkImageProvider(
             //????????????????????????????????
-            user.profileImageUrl,
+            story.media == "IMAGE" ? story.url : sutasLogo,
           ),
         ),
         const SizedBox(
@@ -307,7 +311,7 @@ class UserInfo extends StatelessWidget {
         ),
         Expanded(
             child: Text(
-          user.name,
+          story.user,
           style: context.textTheme.subtitle1.copyWith(
               color: AllColors.MAIN_GREEN,
               fontWeight: FontWeight.bold,

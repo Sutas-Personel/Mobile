@@ -13,3 +13,9 @@ class ResponseModel<T> extends IResponseModel<T> {
 
   ResponseModel({this.data, this.error});
 }
+
+class BaseError extends IErrorModel {
+  final String message;
+
+  BaseError(this.message);
+}
