@@ -47,7 +47,7 @@ class TimeFlowCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: context.lowValue),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: context.theme.primaryColor,
           boxShadow: [
             BoxShadow(
                 color: Colors.black26,

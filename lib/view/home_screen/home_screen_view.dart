@@ -20,16 +20,12 @@ class HomeScreenView extends HomeScreenViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
-        title: Text(
-          LocaleKeys.home_name.locale.toUpperCase(),
-          style:
-              context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
-        ),
+        title: Text(LocaleKeys.home_name.locale.toUpperCase(),
+            style: context.textTheme.headline6),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: context.lowValue),
-            child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
+            padding: EdgeInsets.only(right: context.normalValue),
+            child: Icon(Icons.menu, color: context.theme.focusColor),
           )
         ],
         elevation: 0,

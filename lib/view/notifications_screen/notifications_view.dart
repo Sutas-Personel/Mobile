@@ -15,13 +15,14 @@ class NotificationsScreenView extends NotificationsScreenViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
-        title: Text(
-          LocaleKeys.notifications_name.locale.toString(),
-          style:
-              context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
-        ),
-        actions: [Icon(Icons.menu, color: AllColors.MAIN_GREEN)],
+        title: Text(LocaleKeys.notifications_name.locale.toString(),
+            style: context.textTheme.headline6),
+        actions: [
+          Padding(
+            padding: context.paddingNormal,
+            child: Icon(Icons.menu, color: context.theme.focusColor),
+          )
+        ],
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
