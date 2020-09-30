@@ -36,6 +36,7 @@ dependencies:
   flutter_vector_icons: ^0.2.1
   dio: ^3.0.10
   lottie: ^0.6.0
+  provider: ^4.3.2+2
 
 dev_dependencies:
   flutter_test:

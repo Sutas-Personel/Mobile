@@ -35,9 +35,12 @@ class HomeScreenView extends HomeScreenViewModel {
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [storyPage(), contentPage()],
-        ),
+              child: Column(
+            children: [
+              storyPage(),
+              contentPage()
+            ],
+          ),
       ),
     );
   }

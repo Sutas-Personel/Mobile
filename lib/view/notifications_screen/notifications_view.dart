@@ -1,13 +1,14 @@
-import 'package:SutasPersonel/core/components/list_tile_card.dart';
-import 'package:SutasPersonel/core/constants/colors.dart';
-import 'package:SutasPersonel/generated/locale_keys.g.dart';
-import 'package:SutasPersonel/models/notification_model.dart';
-import 'package:SutasPersonel/services/notifications_services.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/components/list_tile_card.dart';
+import '../../core/constants/colors.dart';
 import '../../core/extension/context_entension.dart';
-import 'notifications_view_model.dart';
-import '../../core/extension/string_extension.dart';
 import '../../core/extension/future_builder.dart';
+import '../../core/extension/string_extension.dart';
+import '../../generated/locale_keys.g.dart';
+import '../../models/notification_model.dart';
+import '../../services/notifications_services.dart';
+import 'notifications_view_model.dart';
 
 class NotificationsScreenView extends NotificationsScreenViewModel {
   @override
