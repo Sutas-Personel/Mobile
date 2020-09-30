@@ -14,7 +14,7 @@ final ThemeData myLightTheme = ThemeData(
     900: Color(0xff191919)
   }),
   brightness: Brightness.light,
-  primaryColor: Color(0xff5ABD8C), ////
+  primaryColor: Color(0xfffafafa), ////
   primaryColorBrightness: Brightness.light,
   primaryColorLight: Colors.black, ////
   primaryColorDark: Colors.grey, ////
@@ -41,6 +41,7 @@ final ThemeData myLightTheme = ThemeData(
   indicatorColor: Color(0xff808080),
   hintColor: Color(0x8a000000),
   errorColor: Color(0xffd32f2f),
+  focusColor: Color(0xff006e3a),
   buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.normal,
     minWidth: 88,
@@ -78,6 +79,12 @@ final ThemeData myLightTheme = ThemeData(
     ),
   ),
   textTheme: TextTheme(
+    headline6: TextStyle(
+      color: Color(0xff006e3a),
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      fontStyle: FontStyle.normal,
+    ),
     caption: TextStyle(
       color: Color(0x8a000000),
       fontSize: null,

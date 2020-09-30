@@ -41,16 +41,12 @@ class OperationsScreenView extends OperationsScreenViewModel {
       // backgroundColor: ,//????????????????????????????????
 
       appBar: AppBar(
-        leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
-        title: Text(
-          LocaleKeys.operation_operationName.locale,
-          style:
-              context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
-        ),
+        title: Text(LocaleKeys.operation_operationName.locale,
+            style: context.textTheme.headline6),
         actions: [
           Padding(
             padding: EdgeInsets.only(right: context.normalValue),
-            child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
+            child: Icon(Icons.menu, color: context.theme.focusColor),
           )
         ],
         elevation: 0,

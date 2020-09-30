@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import './bottom_navigation_view_model.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../../core/extension/string_extension.dart';
+import '../../core/extension/context_entension.dart';
 
 class BottomNavigationView extends BottomNavigationViewModel {
   @override
@@ -18,9 +19,9 @@ class BottomNavigationView extends BottomNavigationViewModel {
             });
           },
           type: BottomNavigationBarType.fixed,
-          unselectedLabelStyle: TextStyle(color: AllColors.BLUE_GRAY),
+          unselectedLabelStyle: TextStyle(color: context.theme.dividerColor),
           unselectedItemColor: AllColors.BLUE_GRAY,
-          selectedItemColor: AllColors.MAIN_GREEN,
+          selectedItemColor: Theme.of(context).focusColor,
           backgroundColor: Theme.of(context).bottomAppBarColor,
           currentIndex: sellectedItem,
           items: [
