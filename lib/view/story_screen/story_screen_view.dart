@@ -8,6 +8,8 @@ import 'story_screen_view_model.dart';
 
 class StoryScreenView extends StoryScreenViewModel
     with SingleTickerProviderStateMixin {
+
+
   PageController _pageController;
   AnimationController _animationController;
   VideoPlayerController _videoController;
@@ -50,6 +52,7 @@ class StoryScreenView extends StoryScreenViewModel
 
   @override
   Widget build(BuildContext context) {
+    
     final StoryModel story = stories[_currentIndex];
 
     return Scaffold(

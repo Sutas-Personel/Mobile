@@ -32,7 +32,7 @@ class NavigationRoute {
     }
   }
 
-  MaterialPageRoute normalNavigate(Widget widget, int id) {
+  MaterialPageRoute normalNavigate(Widget widget, String id) {
     return MaterialPageRoute(
       builder: (context) => widget,
       settings: RouteSettings(

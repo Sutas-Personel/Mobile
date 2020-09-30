@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import '../../services/news_services.dart';
+import '../../services/notifications_services.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/components/story_card_lists.dart';
@@ -11,8 +15,13 @@ import '../../services/story_services.dart';
 import 'cardDetail_view_model.dart';
 
 class CardDetailView extends CardDetailViewModel {
+  
+
   @override
   Widget build(BuildContext context) {
+  
+
+    final String newsId = ModalRoute.of(context).settings.arguments;
     
     return Scaffold(
       appBar: AppBar(
@@ -40,10 +49,13 @@ class CardDetailView extends CardDetailViewModel {
           child: Column(
             children: [
               storyPage(),
-              TimeFlowCard(
-                flowCard: newsGet,
-                isHomeScreen: false,
-              ),
+              Future.value(NewsService.instance.getNewsSearch(newsId))
+                  .toBuild<Object>(onSuccess: (data) {
+                return TimeFlowCard(
+                  flowCard: data,
+                  isHomeScreen: false,
+                );
+              })
             ],
           ),
         ),

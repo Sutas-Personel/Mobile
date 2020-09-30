@@ -7,13 +7,19 @@ import 'notifications.dart';
 abstract class NotificationsScreenViewModel extends State<NotificationsScreen> {
   INotificationService notificationService;
   List<NotificationsModel> getNotificationsList;
-
+  bool isLoading=false;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     notificationService = NotificationService.instance;
-    // getNotificationsLists();
+    getNotificationsLists();
+  }
+
+  @override
+  void setState(fn) {
+    // TODO: implement setState
+    super.setState(fn);
   }
 
   @override
@@ -21,7 +27,8 @@ abstract class NotificationsScreenViewModel extends State<NotificationsScreen> {
     super.dispose();
   }
 
-  /* Future<void> getNotificationsLists() async {
+  Future<void> getNotificationsLists() async {
     getNotificationsList = await notificationService.getNotificationList();
-  } */
+    return true;
+  }
 }

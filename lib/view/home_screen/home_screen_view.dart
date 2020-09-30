@@ -1,6 +1,7 @@
-import 'package:SutasPersonel/core/components/story_card_lists.dart';
-import 'package:SutasPersonel/services/notifications_services.dart';
-import 'package:SutasPersonel/services/story_services.dart';
+import '../../core/components/story_card_lists.dart';
+import '../../core/constants/navigation_constants.dart';
+import '../../services/notifications_services.dart';
+import '../../services/story_services.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/components/time_flow_card.dart';
@@ -35,12 +36,9 @@ class HomeScreenView extends HomeScreenViewModel {
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
-              child: Column(
-            children: [
-              storyPage(),
-              contentPage()
-            ],
-          ),
+        child: Column(
+          children: [storyPage(), contentPage()],
+        ),
       ),
     );
   }
@@ -67,10 +65,9 @@ class HomeScreenView extends HomeScreenViewModel {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            return Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => CardDetail()),
-            );
+            navigation.navigateToPage(
+                path: NavigationConstants.CARD_DETAIL,
+                data: listNews[index].sId);
           },
           child: TimeFlowCard(
             flowCard: listNews[index],
