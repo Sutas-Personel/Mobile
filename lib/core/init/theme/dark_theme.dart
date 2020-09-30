@@ -40,6 +40,7 @@ final ThemeData myDarkTheme = ThemeData(
   dialogBackgroundColor: Color(0xff424242),
   indicatorColor: Color(0xff64ffda),
   hintColor: Color(0x80ffffff),
+  focusColor: Color(0xfff5f5f5),
   errorColor: Colors.brown,
   buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.normal,
@@ -78,6 +79,12 @@ final ThemeData myDarkTheme = ThemeData(
     ),
   ),
   textTheme: TextTheme(
+    headline6: TextStyle(
+      color: Color(0xffffffff),
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      fontStyle: FontStyle.normal,
+    ),
     caption: TextStyle(
       color: Color(0xb3ffffff),
       fontSize: null,
@@ -87,7 +94,7 @@ final ThemeData myDarkTheme = ThemeData(
     button: TextStyle(
       color: Color(0xffffffff),
       fontSize: null,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
       fontStyle: FontStyle.normal,
     ),
     overline: TextStyle(
