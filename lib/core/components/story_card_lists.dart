@@ -1,3 +1,4 @@
+import 'package:SutasPersonel/core/components/story_content_card.dart';
 import 'package:SutasPersonel/core/constants/navigation_constants.dart';
 import 'package:SutasPersonel/core/init/navigation/navigation_service.dart';
 import 'package:SutasPersonel/models/story_model.dart';
@@ -15,7 +16,7 @@ class StoryCardLists extends StatefulWidget {
   _StoryCardListsState createState() => _StoryCardListsState();
 }
 
-class _StoryCardListsState extends State<StoryCardLists>   with BaseViewModel{
+class _StoryCardListsState extends State<StoryCardLists> with BaseViewModel {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,9 +27,14 @@ class _StoryCardListsState extends State<StoryCardLists>   with BaseViewModel{
         itemCount: widget.stories.length,
         itemBuilder: (context, index) => GestureDetector(
             onTap: () {
-           /*   navigation.navigateToPage(
-                path: NavigationConstants.STORY_DETAIL,
-                data: widget.stories[index].sId); */
+              //????????????????????????????????
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => StoryScreen(
+                            stories: widget.stories,
+                            indexClick: index,
+                          )));
             },
             child: StoryCard(
                 imgUrl: storyUserUrl(

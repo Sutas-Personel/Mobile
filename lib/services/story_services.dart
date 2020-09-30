@@ -18,4 +18,10 @@ class StoryService extends BaseService implements IStoryService {
             type: HttpTypes.GET, parseModel: StoryModel()))
         .data;
   }
+
+   Future<StoryModel> getNewsSearch(String storyID) async {
+    return (await coreDio.fetch<StoryModel, StoryModel>("story/search/$storyID",
+            type: HttpTypes.GET, parseModel: StoryModel()))
+        .data;
+  }
 }
