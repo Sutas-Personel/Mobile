@@ -1,4 +1,5 @@
 import 'package:SutasPersonel/core/init/cache/locale_manager.dart';
+import 'package:SutasPersonel/core/init/routes/router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        themeMode: ThemeMode.system,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         theme: Provider.of<ThemeNotifier>(
