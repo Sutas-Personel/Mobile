@@ -20,17 +20,17 @@ class ProfilScreenView extends ProfilScreenViewModel {
     var themeProvider = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN),
         title: Text(
           LocaleKeys.profile_Profile.locale.toUpperCase(),
-          style:
-              context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
+          style: context.textTheme.headline6,
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: context.lowValue),
-            child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
-          )
+              padding: EdgeInsets.only(right: context.normalValue),
+              child: Icon(
+                Icons.menu,
+                color: context.theme.focusColor,
+              ))
         ],
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -41,61 +41,64 @@ class ProfilScreenView extends ProfilScreenViewModel {
             Expanded(flex: 2, child: profilHeaderArea(context)),
             Expanded(
               flex: 10,
-              child: ListView(
-                children: [
-                  ProfileListCard(Icons.settings,
-                      LocaleKeys.profile_ProfileSettings.locale),
-                  ListTile(
-                    leading: Icon(Icons.language),
-                    title: Text(
-                      LocaleKeys.profile_Language.locale,
-                      style: context.textTheme.bodyText1,
-                    ),
-                    trailing: Switch(
-                        value: isLanguage,
-                        onChanged: (value) {
-                          setState(() {
-                            WidgetsBinding.instance
-                                .addPostFrameCallback((timeStamp) {
-                              print("tr");
-                              final tr = LanguageManager.instance.trLocale;
-                              final en = LanguageManager.instance.enLocale;
-                              EasyLocalization.of(context).locale =
-                                  context.locale == tr ? en : tr;
-
-                              setState(() {
-                                isLanguage = value;
-                              });
-                            });
-                          });
-                        }),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.brightness_3),
-                    title: Text(
-                      LocaleKeys.profile_Theme.locale,
-                      style: context.textTheme.bodyText1,
-                    ),
-                    trailing: Switch(
-                      value: isTheme,
-                      onChanged: (value) {
-                        setState(() {
-                          isTheme = value;
-                          themeProvider.changeTheme();
-                        });
-                      },
-                    ),
-                  ),
-                  ProfileListCard(
-                    Icons.exit_to_app,
-                    LocaleKeys.profile_Exit.locale,
-                  ),
-                ],
-              ),
+              child: profileBodyArea(context, themeProvider),
             )
           ],
         ),
       ),
+    );
+  }
+
+  ListView profileBodyArea(BuildContext context, ThemeNotifier themeProvider) {
+    return ListView(
+      children: [
+        ProfileListCard(
+            Icons.settings, LocaleKeys.profile_ProfileSettings.locale),
+        ListTile(
+          leading: Icon(Icons.language),
+          title: Text(
+            LocaleKeys.profile_Language.locale,
+            style: context.textTheme.bodyText1,
+          ),
+          trailing: Switch(
+              value: isLanguage,
+              onChanged: (value) {
+                setState(() {
+                  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                    print("tr");
+                    final tr = LanguageManager.instance.trLocale;
+                    final en = LanguageManager.instance.enLocale;
+                    EasyLocalization.of(context).locale =
+                        context.locale == tr ? en : tr;
+
+                    setState(() {
+                      isLanguage = value;
+                    });
+                  });
+                });
+              }),
+        ),
+        ListTile(
+          leading: Icon(Icons.brightness_3),
+          title: Text(
+            LocaleKeys.profile_Theme.locale,
+            style: context.textTheme.bodyText1,
+          ),
+          trailing: Switch(
+            value: isTheme,
+            onChanged: (value) {
+              setState(() {
+                isTheme = value;
+                themeProvider.changeTheme();
+              });
+            },
+          ),
+        ),
+        ProfileListCard(
+          Icons.exit_to_app,
+          LocaleKeys.profile_Exit.locale,
+        ),
+      ],
     );
   }
 
@@ -159,13 +162,16 @@ class ProfilScreenView extends ProfilScreenViewModel {
   }
 
   Text userName(BuildContext context) {
-    return Text("Fatih Emre Kalem", style: context.textTheme.bodyText1);
+    return Text("Fatih Emre Kalem",
+        style:
+            context.textTheme.bodyText1.copyWith(color: AllColors.FONT_BLACK));
   }
 
   Padding profilHeaderUserProfilImage(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: context.normalValue),
       child: CircleAvatar(
+        radius: 29,
         backgroundColor: AllColors.ONBOARDING_GRAY,
         child: Text(
           'FE',
