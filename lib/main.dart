@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app_constants.dart';
+import 'core/init/cache/locale_manager.dart';
 import 'core/init/lang/language_manager.dart';
+import 'core/init/navigation/navigation_route.dart';
+import 'core/init/navigation/navigation_service.dart';
 import 'core/init/notifier/provider_list.dart';
 import 'core/init/notifier/theme_notifier.dart';
 import 'view/bottom_navigation/bottom_navigation.dart';
@@ -31,6 +34,8 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
+        onGenerateRoute: NavigationRoute.instance.generateRoute,
+        navigatorKey: NavigationService.instance.navigatorKey,
         theme: Provider.of<ThemeNotifier>(
           context,
           listen: true,

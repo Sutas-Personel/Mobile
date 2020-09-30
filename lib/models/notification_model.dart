@@ -37,12 +37,7 @@ class NotificationsModel implements IBaseModel<NotificationsModel> {
   }
 
   @override
-  NotificationsModel fromJson(Map<String, Object> json) {
-    important = json['important'];
-    sId = json['_id'];
-    title = json['title'];
-    subtitle = json['subtitle'];
-    date = json['date'];
-    iV = json['__v'];
+  fromJson(Map<String,Object> json) {
+    return NotificationsModel.fromJson(json);
   }
 }

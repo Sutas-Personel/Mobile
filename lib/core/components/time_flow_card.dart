@@ -11,6 +11,12 @@ class TimeFlowCard extends StatelessWidget {
   final NewsModel flowCard;
   final bool isHomeScreen;
 
+  TimeFlowCard({
+    Key key,
+    this.flowCard,
+    this.isHomeScreen = true,
+  }) : super(key: key);
+  
   List<Map<String, dynamic>> socialMedia = [
     {
       "icon": FontAwesome.instagram,
@@ -34,11 +40,6 @@ class TimeFlowCard extends StatelessWidget {
     },
   ];
 
-  TimeFlowCard({
-    Key key,
-    this.flowCard,
-    this.isHomeScreen = true,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
