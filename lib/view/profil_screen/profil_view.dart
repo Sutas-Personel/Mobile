@@ -142,15 +142,29 @@ class ProfilScreenView extends ProfilScreenViewModel {
                     final en = LanguageManager.instance.enLocale;
                     EasyLocalization.of(context).locale =
                         context.locale == tr ? en : tr;
-                    isLanguage = !value;
+
+                    setState(() {
+                      isLanguage = value;
+                    });
                   });
                 });
               }),
         ),
-        ProfilListCard(
-            icon: Icons.brightness_3,
-            title: LocaleKeys.profile_Theme.locale,
-            isSwitch: isTheme),
+        ListTile(
+          leading: Icon(Icons.brightness_3),
+          title: Text(
+            LocaleKeys.profile_Theme.locale,
+            style: context.textTheme.bodyText1,
+          ),
+          trailing: Switch(
+            value: isTheme,
+            onChanged: (value) {
+              setState(() {
+                isTheme = value;
+              });
+            },
+          ),
+        ),
         ProfilListCard(
           icon: Icons.exit_to_app,
           title: LocaleKeys.profile_Exit.locale,
