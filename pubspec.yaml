@@ -38,10 +38,16 @@ dependencies:
   lottie: ^0.6.0
   provider: ^4.3.2+2
   shared_preferences: ^0.5.12
+  flutter_launcher_icons: ^0.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+    android: true
+    ios: true
+    image_path: "assets/icon/icon.png"    
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -57,6 +63,7 @@ flutter:
   assets:
     - assets/lang/
     - assets/images/
+    - assets/icon/icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
