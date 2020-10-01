@@ -28,7 +28,7 @@ class CodegenLoader extends AssetLoader{
     "EmployeeLogin": "Çalışan Girişi",
     "Email": "E-mail",
     "Password": "Şifre",
-    "LogIn": "Log In",
+    "LogIn": "Giriş Yap",
     "Or": "ya da",
     "AreYouRegistered": "Kayıtlı mısın ?",
     "Register": "Kayıt Ol",
