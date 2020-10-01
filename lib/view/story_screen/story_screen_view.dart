@@ -8,20 +8,20 @@ import 'story_screen_view_model.dart';
 
 class StoryScreenView extends StoryScreenViewModel
     with SingleTickerProviderStateMixin {
-
-
+  int currentIndex;
+  final List<StoryModel> stories;
+  StoryScreenView({this.stories, this.currentIndex});
   PageController _pageController;
   AnimationController _animationController;
   VideoPlayerController _videoController;
-  int _currentIndex = 0;
-  // StoryScreenView({@required this.stories});
+
   @override
   void initState() {
     super.initState();
 
     _pageController = PageController();
     _animationController = AnimationController(vsync: this);
-    final StoryModel firstStory = stories.first;
+    final StoryModel firstStory = stories[currentIndex];
     _loadStory(story: firstStory, animateToPage: false);
 
     _animationController.addStatusListener((status) {
@@ -30,12 +30,12 @@ class StoryScreenView extends StoryScreenViewModel
         _animationController.stop();
         _animationController.reset();
         setState(() {
-          if (_currentIndex + 1 < stories.length) {
-            _currentIndex += 1;
-            _loadStory(story: stories[_currentIndex]);
+          if (currentIndex + 1 < stories.length) {
+            currentIndex += 1;
+            _loadStory(story: stories[currentIndex]);
           } else {
-            _currentIndex = 0;
-            _loadStory(story: stories[_currentIndex]);
+            currentIndex = 0;
+            _loadStory(story: stories[currentIndex]);
           }
         });
       }
@@ -52,8 +52,7 @@ class StoryScreenView extends StoryScreenViewModel
 
   @override
   Widget build(BuildContext context) {
-    
-    final StoryModel story = stories[_currentIndex];
+    final StoryModel story = stories[currentIndex];
 
     return Scaffold(
       body: GestureDetector(
@@ -82,7 +81,7 @@ class StoryScreenView extends StoryScreenViewModel
                     AnimatedBar(
                       animController: _animationController,
                       position: key,
-                      currentIndex: _currentIndex,
+                      currentIndex: currentIndex,
                     ),
                   ),
                 )
@@ -106,7 +105,7 @@ class StoryScreenView extends StoryScreenViewModel
       controller: _pageController,
       itemCount: stories.length,
       itemBuilder: (context, index) {
-        final StoryModel story = stories[index];
+        final StoryModel story = stories[currentIndex];
 
         switch (story.media) {
           case MediaType.image:
@@ -177,7 +176,7 @@ class StoryScreenView extends StoryScreenViewModel
 
     if (animateToPage) {
       _pageController.animateToPage(
-        _currentIndex,
+        currentIndex,
         duration: const Duration(milliseconds: 1),
         curve: Curves.easeInOut,
       );
@@ -193,21 +192,21 @@ class StoryScreenView extends StoryScreenViewModel
       //ekranın 3/1 oranın sol kısmın dokunmaları yakalıyor.
 
       setState(() {
-        if (_currentIndex - 1 >= 0) {
-          _currentIndex--;
-          _loadStory(story: stories[_currentIndex]);
+        if (currentIndex - 1 >= 0) {
+          currentIndex--;
+          _loadStory(story: stories[currentIndex]);
         }
       });
     } else if (dx > 2 * screenWidth / 3) {
       //ekranın 3/1 oranın sağ kısmın dokunmaları yakalıyor.
 
       setState(() {
-        if (_currentIndex + 1 < stories.length) {
-          _currentIndex++;
-          _loadStory(story: stories[_currentIndex]);
+        if (currentIndex + 1 < stories.length) {
+          currentIndex++;
+          _loadStory(story: stories[currentIndex]);
         } else {
-          _currentIndex = 0;
-          _loadStory(story: stories[_currentIndex]);
+          currentIndex = 0;
+          _loadStory(story: stories[currentIndex]);
         }
       });
     } else {
