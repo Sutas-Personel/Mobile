@@ -1,3 +1,8 @@
+import 'package:SutasPersonel/view/bottom_navigation/bottom_navigation.dart';
+import 'package:SutasPersonel/view/forgot_password/forgot_password.dart';
+import 'package:SutasPersonel/view/login_screen/login_screen.dart';
+import 'package:SutasPersonel/view/onboarding_screen/onboarding_view.dart';
+import 'package:SutasPersonel/view/register_page/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -19,6 +24,21 @@ class NavigationRoute {
         break;
       case NavigationConstants.STORY_DETAIL:
         return normalNavigate(StoryScreen(), args.arguments);
+        break;
+      case NavigationConstants.LOGIN_PAGE:
+        return normalNavigate(LoginScreen(), args.arguments);
+        break;
+      case NavigationConstants.BOTTOM_NAVIGATION_PAGE:
+        return normalNavigate(BottomNavigation(), args.arguments);
+        break;
+      case NavigationConstants.REGISTER_PAGE:
+        return normalNavigate(RegisterPage(), args.arguments);
+        break;
+      case NavigationConstants.ONBOARDING:
+        return normalNavigate(OnboardingScreen(), args.arguments);
+        break;
+      case NavigationConstants.FORGOT_PASSWORD_PAGE:
+        return normalNavigate(ForgotPassword(), args.arguments);
         break;
 
       default:

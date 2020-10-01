@@ -1,5 +1,6 @@
 import 'package:SutasPersonel/core/init/cache/locale_manager.dart';
 import 'package:SutasPersonel/core/init/routes/router.dart';
+import 'package:SutasPersonel/view/splash_screen/splash_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,6 @@ class MyApp extends StatelessWidget {
         ).currentTheme,
         locale: context.locale,
         title: 'Material App',
-        home: BottomNavigation());
+        home: SplashScreen());
   }
 }
