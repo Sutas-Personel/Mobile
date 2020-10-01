@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,

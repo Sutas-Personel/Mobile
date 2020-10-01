@@ -15,30 +15,25 @@ import '../../services/story_services.dart';
 import 'cardDetail_view_model.dart';
 
 class CardDetailView extends CardDetailViewModel {
-  
-
   @override
   Widget build(BuildContext context) {
-  
-
     final String newsId = ModalRoute.of(context).settings.arguments;
-    
+
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.chevron_left, color: AllColors.MAIN_GREEN)),
+            child: Icon(Icons.chevron_left, color: context.theme.focusColor)),
         title: Text(
           LocaleKeys.cardDetail_name.locale.toUpperCase(),
-          style:
-              context.textTheme.headline6.copyWith(color: AllColors.MAIN_GREEN),
+          style: context.textTheme.headline6,
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: context.lowValue),
-            child: Icon(Icons.menu, color: AllColors.MAIN_GREEN),
+            padding: EdgeInsets.only(right: context.normalValue),
+            child: Icon(Icons.menu, color: context.theme.focusColor),
           )
         ],
         elevation: 0,
