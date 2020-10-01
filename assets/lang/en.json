@@ -1,0 +1,48 @@
+{
+  "routeFailed": "Bir sorun oluştu",
+  "profile": {
+    "Profile": "Profile",
+    "ProfileSettings": "Profile Settings",
+    "Language": "Language",
+    "Theme": "Theme",
+    "Exit": "Exit"
+  },
+  "login": {
+    "Name": "Name",
+    "EmployeeLogin": "Employee Login",
+    "Email": "E-mail",
+    "Password": "Password",
+    "LogIn": "Log In",
+    "Or": "Or",
+    "AreYouRegistered": "Are You Registered",
+    "Register": "Register",
+    "ForgotPassword": "Forgot Password",
+    "SendPasswordReset": "Send Password Reset Link"
+  },
+  "cardDetail": {
+    "name": "Content Detail",
+    "socialMediaShareText": "Share content on social media"
+  },
+  "home": {
+    "name": "Time Line"
+  },
+  "operation": {
+    "operationName": "OPERATION",
+    "permissionProcedures" : "Permission Procedures",
+    "administrativeOperations" : "Administrative Operations",
+    "serviceOperations" : "Service Operations",
+    "passwordOperations" : "Password Operations",
+    "collectionTransactions" : "Collection Transactions",
+    "chillerOperations" : "Chiller Operations"
+  },
+  "notifications": {
+    "name": "NOTIFICATIONS"
+  },
+  "navigationBar":{
+    "home": "Home",
+    "operations" : "Operations",
+    "notifications": "Notifications",
+    "profile": "Profile"
+
+  }
+}
